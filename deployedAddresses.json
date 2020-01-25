@@ -1,0 +1,49 @@
+{
+  "4": {
+    "events": {
+      "0x5ec743f1d0419091a427f519206ded3ef1711d57bdf2e82e2ad58a38b6165c25": {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "deployedAddress",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "deployer",
+            "type": "address"
+          }
+        ],
+        "name": "NewFundingContract",
+        "type": "event",
+        "signature": "0x5ec743f1d0419091a427f519206ded3ef1711d57bdf2e82e2ad58a38b6165c25"
+      },
+      "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "previousOwner",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "newOwner",
+            "type": "address"
+          }
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event",
+        "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+      }
+    },
+    "links": {},
+    "address": "0xd755D2617859A57d90779EcDF714F866Ace294bb",
+    "transactionHash": "0x925fd611722dfd9bcb8780ff1dfe9e4171fee56a233c588f6379995f3fa66cec"
+  }
+}

@@ -27,7 +27,7 @@
       <input
         name="contractAddress"
         id="contract-address"
-        value="0xac3e149220EcAd1C620fC39EAc4264ed78dDe526"
+        value="0x0982d2244e83a0d85e4922388d6857d57cdab972"
       />
     </div>
     <div class="content">
@@ -63,8 +63,8 @@
           window.web3 = new Web3(window.web3.currentProvider);
 
           const network = await getNetworkId(web3);
-          if (network.networkId !== '4') {
-            return reject('Metamask Rinkeby agina bakmali.');
+          if (network.networkId !== '1') {
+            return reject('Metamask mainnet agina bakmali.');
           }
           await window.ethereum.enable();
           resolve(web3);

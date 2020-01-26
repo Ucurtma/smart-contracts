@@ -30,6 +30,28 @@
         "./contracts/DeploymentManager.sol",
         "./build"
       ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Deploy new Funding",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/scripts/deploy-contracts.js",
+      "args": [
+        "-p", 
+        "10",
+        "-w", 
+        "28", 
+        "-e", 
+        "60",
+        "-t", 
+        "0x31f1cfbbbd9ce6ee0f8d9c79828b0b099653daa0", 
+        "-o", 
+        "0xFb4BA4f9a0d80ffda8b11bbcDCD56a0eDd7729E2" ,
+        "--rinkeby"
+      ]
     }
   ]
 }

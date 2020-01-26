@@ -13,21 +13,26 @@
     "deploy:ropsten": "yarn truffle migrate --network ropsten && node ./scripts/local/extractDeployedAddresses.js",
     "deploy:kovan": "yarn truffle migrate --network kovan && node ./scripts/local/extractDeployedAddresses.js",
     "deploy:rinkeby": "yarn truffle migrate --network rinkeby && node ./scripts/local/extractDeployedAddresses.js",
-    "deploy:local": "yarn truffle migrate && node ./scripts/local/updateOtherReposWithDeployerAddress.js"
+    "deploy:local": "yarn truffle migrate && node ./scripts/local/updateOtherReposWithDeployerAddress.js",
+    "cleanup": "yarn truffle networks --clean",
+    "verify": "yarn prepublishOnly && yarn truffle run verify"
   },
   "dependencies": {
     "@truffle/contract": "^4.1.6",
     "babel-cli": "^6.26.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "commander": "^4.1.0",
     "crypto": "^1.0.1",
     "eth-gas-reporter": "^0.2.14",
     "ethval": "^2.0.0",
+    "moment": "^2.24.0",
     "node-static": "^0.7.11",
     "openzeppelin-solidity": "^2.4.0",
     "sol-merger": "^1.2.2",
     "truffle": "^5.1.3",
     "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-plugin-verify": "^0.3.8",
     "web3": "^1.2.5-rc.0",
     "web3-utils": "^1.2.4",
     "yargs": "^15.1.0"

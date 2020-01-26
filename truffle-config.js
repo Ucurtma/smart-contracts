@@ -25,7 +25,6 @@ module.exports = {
     },
     rinkeby: {
       provider: (num_addresses = 1) => {
-        console.log(num_addresses);
         return new HDWalletProvider(
           mnemonic,
           `https://rinkeby.infura.io/v3/${infuraKey}`,

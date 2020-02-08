@@ -1,0 +1,1077 @@
+{
+  "contractName": "BiliraFundingContractDeployer",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_numberOfPlannedPayouts",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_withdrawPeriod",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_campaignEndTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address payable",
+          "name": "__owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_tokenAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "deploy",
+      "outputs": [
+        {
+          "internalType": "contract FundingContract",
+          "name": "c",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberOfPlannedPayouts\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_withdrawPeriod\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_campaignEndTime\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"__owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_adminAddress\",\"type\":\"address\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"contract FundingContract\",\"name\":\"c\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/BiliraFundingContractDeployer.sol\":\"BiliraFundingContractDeployer\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/AbstractFundingContract.sol\":{\"keccak256\":\"0xa69e5049f764a49643f442791b5732cc8e2043c6040957640d2b8746a4810dec\",\"urls\":[\"bzz-raw://64caee29e0005ac3de958baa17fc38f1746f3d0f93179a4a7244b9c0f9bde87e\",\"dweb:/ipfs/QmdMtWxPfvQ5gWYvJk7cQ6WxzvLpB5QE9wUraBuycz7kAG\"]},\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/BiliraFundingContractDeployer.sol\":{\"keccak256\":\"0xde21f18a1a43a0859924a868a0bbb5eaf0f66858408630ee8ac5b10c2fb6aac0\",\"urls\":[\"bzz-raw://c27deb8d0a8fda840da82fd2a78c10dc69b6122d2f93b55f1d030ace8db96d3e\",\"dweb:/ipfs/QmVtBSsK5GuKF4tgXawYbrtLMGXhSzGbhYst8ogAA2KYkr\"]},\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":{\"keccak256\":\"0x1ae0f4dfafadb465fb95a90390f1b33ee3a21ae0511dab63771618a28c0492a5\",\"urls\":[\"bzz-raw://f4d8647c4145d7cbc98a91cd0e733b8dba631b7d776650997d1bd5ce74d7ae4b\",\"dweb:/ipfs/QmVzLMqxaTSFqxjuuZTGWsnDNh1JahN9ecHKztVNBTf6Cz\"]},\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/ERC20FundingContract.sol\":{\"keccak256\":\"0xc86e7e65d00486d9d1f722d655c08d15813f3d5766077ff18968a92b35fca22c\",\"urls\":[\"bzz-raw://fa26d6557fed16440ee9b95279a4cfbbb16fe0055aa3e2acb10fccf2b611b9d3\",\"dweb:/ipfs/QmbgAqaeC36ayhgrjGwc8d9VwdxnQBr7eRZwAc27w76BCN\"]},\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol\":{\"keccak256\":\"0x9f9db102c903305f10960d5c1906da20ce05cd81d8ecfabb91f49fbc759d77a6\",\"urls\":[\"bzz-raw://c3ab1887576ad924d0781f05f1952e5e710eeee84e1cb23831759e34c681e82e\",\"dweb:/ipfs/QmaFU3iqzeKBGLLXjTqcdXyeTdkRHmJ2Krc3XUFbgo36gP\"]},\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/zeppelin/ownership/AdminControlled.sol\":{\"keccak256\":\"0x87bd8105d366e9b0e30bd7cc184c0903955e7133c3127fb0409b888dbeaea9cd\",\"urls\":[\"bzz-raw://de194de0eadb8e2402d63ed866f8f1f87728edce414fc8f0d9adbf58dbf79f43\",\"dweb:/ipfs/QmbDoiDgvjnErEywP29jZjBtCcLkRp6XzibSzi35CCENQa\"]},\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/zeppelin/ownership/Ownable.sol\":{\"keccak256\":\"0x7486e02772890696e885e7a091be764f7e1c6b851d428fdb5ccbafa7755d279c\",\"urls\":[\"bzz-raw://f1eb88f4e123cec73459c843185e4a5c54a8771024a5f2fc06191fc5ec9ac36f\",\"dweb:/ipfs/QmPSSFGtP6PaPd132J9osGA9USbsUtswYSXFq8UQ7gisRU\"]},\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/zeppelin/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xe5bb0f57cff3e299f360052ba50f1ea0fff046df2be070b6943e0e3c3fdad8a9\",\"urls\":[\"bzz-raw://59fd025151435da35faa8093a5c7a17de02de9d08ad27275c5cdf05050820d91\",\"dweb:/ipfs/QmQMvwEcPhoRXzbXyrdoeRtvLoifUW9Qh7Luho7bmUPRkc\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610c3f806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063b082fac014610030575b600080fd5b61007a600480360360c081101561004657600080fd5b508035906020810135906040810135906001600160a01b036060820135811691608081013582169160a09091013516610096565b604080516001600160a01b039092168252519081900360200190f35b60008686868686866040516100aa90610108565b95865260208601949094526040808601939093526001600160a01b039182166060860152811660808501529190911660a0830152519081900360c001906000f0801580156100fc573d6000803e3d6000fd5b50979650505050505050565b610af5806101168339019056fe608060405234801561001057600080fd5b50604051610af5380380610af5833981810160405260c081101561003357600080fd5b508051602082015160408301516060840151608085015160a09095015160008054600180546001600160a01b038086166001600160a01b0319928316179092556002899055600388905581861692811633171691909117909155600686905560048490559495939492939192821661010c57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601a60248201527f6e65656420612076616c696420746f6b656e2061646472657373000000000000604482015290519081900360640190fd5b50600880546001600160a01b039092166001600160a01b0319909216919091179055505050506109b4806101416000396000f3fe608060405234801561001057600080fd5b506004361061010b5760003560e01c80638da5cb5b116100a2578063bb2361e011610071578063bb2361e01461021a578063e91f109e14610240578063f2fde38b14610248578063f848d5411461026e578063fc0c546a146102765761010b565b80638da5cb5b146101fa5780639a82a09a14610202578063b51459fe1461020a578063b52eea74146102125761010b565b806351b9853e116100de57806351b9853e1461017c5780636a83b49d146101845780636eacd398146101b057806377955245146101d65761010b565b806312eb4f9a14610110578063268894611461012a5780633ccfd60b1461014657806347e7ef2414610150575b600080fd5b61011861027e565b60408051918252519081900360200190f35b610132610284565b604080519115158252519081900360200190f35b61014e6102e9565b005b61014e6004803603604081101561016657600080fd5b506001600160a01b038135169060200135610467565b610118610509565b61014e6004803603604081101561019a57600080fd5b506001600160a01b03813516906020013561050f565b610118600480360360208110156101c657600080fd5b50356001600160a01b03166105bd565b6101de61063a565b604080516001600160a01b039092168252519081900360200190f35b6101de610649565b610132610658565b610132610661565b61011861066d565b61014e6004803603602081101561023057600080fd5b50356001600160a01b0316610673565b610118610768565b61014e6004803603602081101561025e57600080fd5b50356001600160a01b031661076e565b6101186107f3565b6101de6107f9565b60035481565b6001546000906001600160a01b031633146102d05760405162461bcd60e51b81526004018080602001828103825260368152602001806109286036913960400191505060405180910390fd5b506005805460ff19811660ff9182161517918290551690565b60055460ff1615610339576040805162461bcd60e51b815260206004820152601560248201527410d85b5c185a59db881a5cc818d85b98d95b1b1959605a1b604482015290519081900360640190fd5b6000546001600160a01b0316331461035057600080fd5b610358610661565b6103a9576040805162461bcd60e51b815260206004820152601760248201527f4e6f7420616c6c6f77656420746f207769746864726177000000000000000000604482015290519081900360640190fd5b60006103b4336105bd565b905060008111610400576040805162461bcd60e51b8152602060048201526012602482015271496e73756666696369656e742066756e647360701b604482015290519081900360640190fd5b6000600654828161040d57fe5b04905061041a3382610808565b6006805460001901905542600455604080513381526020810183905281517ff007d0b6dd0d09fe0f99bb9f92c996cf7954d82ddb96f70b5f5a3cefe52d959f929181900390910190a15050565b60055460ff16156104b7576040805162461bcd60e51b815260206004820152601560248201527410d85b5c185a59db881a5cc818d85b98d95b1b1959605a1b604482015290519081900360640190fd5b6104c1828261088e565b604080516001600160a01b03841681526020810183905281517f2cb77763bc1e8490c1a904905c4d74b4269919aca114464f4bb4d911e60de364929181900390910190a15050565b60065481565b60055460ff16610566576040805162461bcd60e51b815260206004820152601c60248201527f43616d706169676e2073686f756c642062652063616e63656c6c656400000000604482015290519081900360640190fd5b6001546001600160a01b031633146105af5760405162461bcd60e51b81526004018080602001828103825260368152602001806109286036913960400191505060405180910390fd5b6105b98282610808565b5050565b600854604080516370a0823160e01b815230600482015290516000926001600160a01b0316916370a08231916024808301926020929190829003018186803b15801561060857600080fd5b505afa15801561061c573d6000803e3d6000fd5b505050506040513d602081101561063257600080fd5b505192915050565b6001546001600160a01b031681565b6000546001600160a01b031681565b60055460ff1681565b60035460045401421190565b60045481565b6001546001600160a01b031633146106bc5760405162461bcd60e51b81526004018080602001828103825260368152602001806109286036913960400191505060405180910390fd5b6001600160a01b03811661070c576040805162461bcd60e51b81526020600482015260126024820152712732b2b21030903b30b634b21030b236b4b760711b604482015290519081900360640190fd5b6001546040516001600160a01b038084169216907f2f4e7de2a1dbac81744f8c97250194a39d96545eb864d155412811ff2f9c9ff890600090a3600180546001600160a01b0319166001600160a01b0392909216919091179055565b60025481565b6000546001600160a01b0316331461078557600080fd5b6001600160a01b03811661079857600080fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b60075481565b6008546001600160a01b031681565b6008546040805163a9059cbb60e01b81526001600160a01b038581166004830152602482018590529151919092169163a9059cbb9160448083019260209291908290030181600087803b15801561085e57600080fd5b505af1158015610872573d6000803e3d6000fd5b505050506040513d602081101561088857600080fd5b50505050565b34156108cb5760405162461bcd60e51b815260040180806020018281038252602281526020018061095e6022913960400191505060405180910390fd5b600854604080516323b872dd60e01b81526001600160a01b03858116600483015230602483015260448201859052915191909216916323b872dd9160648083019260209291908290030181600087803b15801561085e57600080fdfe4f6e6c7920636f6e74726163742061646d696e6973747261746f722063616e20706572666f726d2074686973206f7065726174696f6e4e6f2045544820616c6c6f77656420666f7220455243323020636f6e74726163742ea265627a7a7231582063366d5ba8d2d5deb1376f03eb9df2e301329a86055623120bfc91ff30b5152364736f6c634300050b0032a265627a7a72315820ba5a4191fafb29e5253627e690b1dd94dedfa77199610ccbb8b093f40ff8d78164736f6c634300050b0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063b082fac014610030575b600080fd5b61007a600480360360c081101561004657600080fd5b508035906020810135906040810135906001600160a01b036060820135811691608081013582169160a09091013516610096565b604080516001600160a01b039092168252519081900360200190f35b60008686868686866040516100aa90610108565b95865260208601949094526040808601939093526001600160a01b039182166060860152811660808501529190911660a0830152519081900360c001906000f0801580156100fc573d6000803e3d6000fd5b50979650505050505050565b610af5806101168339019056fe608060405234801561001057600080fd5b50604051610af5380380610af5833981810160405260c081101561003357600080fd5b508051602082015160408301516060840151608085015160a09095015160008054600180546001600160a01b038086166001600160a01b0319928316179092556002899055600388905581861692811633171691909117909155600686905560048490559495939492939192821661010c57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601a60248201527f6e65656420612076616c696420746f6b656e2061646472657373000000000000604482015290519081900360640190fd5b50600880546001600160a01b039092166001600160a01b0319909216919091179055505050506109b4806101416000396000f3fe608060405234801561001057600080fd5b506004361061010b5760003560e01c80638da5cb5b116100a2578063bb2361e011610071578063bb2361e01461021a578063e91f109e14610240578063f2fde38b14610248578063f848d5411461026e578063fc0c546a146102765761010b565b80638da5cb5b146101fa5780639a82a09a14610202578063b51459fe1461020a578063b52eea74146102125761010b565b806351b9853e116100de57806351b9853e1461017c5780636a83b49d146101845780636eacd398146101b057806377955245146101d65761010b565b806312eb4f9a14610110578063268894611461012a5780633ccfd60b1461014657806347e7ef2414610150575b600080fd5b61011861027e565b60408051918252519081900360200190f35b610132610284565b604080519115158252519081900360200190f35b61014e6102e9565b005b61014e6004803603604081101561016657600080fd5b506001600160a01b038135169060200135610467565b610118610509565b61014e6004803603604081101561019a57600080fd5b506001600160a01b03813516906020013561050f565b610118600480360360208110156101c657600080fd5b50356001600160a01b03166105bd565b6101de61063a565b604080516001600160a01b039092168252519081900360200190f35b6101de610649565b610132610658565b610132610661565b61011861066d565b61014e6004803603602081101561023057600080fd5b50356001600160a01b0316610673565b610118610768565b61014e6004803603602081101561025e57600080fd5b50356001600160a01b031661076e565b6101186107f3565b6101de6107f9565b60035481565b6001546000906001600160a01b031633146102d05760405162461bcd60e51b81526004018080602001828103825260368152602001806109286036913960400191505060405180910390fd5b506005805460ff19811660ff9182161517918290551690565b60055460ff1615610339576040805162461bcd60e51b815260206004820152601560248201527410d85b5c185a59db881a5cc818d85b98d95b1b1959605a1b604482015290519081900360640190fd5b6000546001600160a01b0316331461035057600080fd5b610358610661565b6103a9576040805162461bcd60e51b815260206004820152601760248201527f4e6f7420616c6c6f77656420746f207769746864726177000000000000000000604482015290519081900360640190fd5b60006103b4336105bd565b905060008111610400576040805162461bcd60e51b8152602060048201526012602482015271496e73756666696369656e742066756e647360701b604482015290519081900360640190fd5b6000600654828161040d57fe5b04905061041a3382610808565b6006805460001901905542600455604080513381526020810183905281517ff007d0b6dd0d09fe0f99bb9f92c996cf7954d82ddb96f70b5f5a3cefe52d959f929181900390910190a15050565b60055460ff16156104b7576040805162461bcd60e51b815260206004820152601560248201527410d85b5c185a59db881a5cc818d85b98d95b1b1959605a1b604482015290519081900360640190fd5b6104c1828261088e565b604080516001600160a01b03841681526020810183905281517f2cb77763bc1e8490c1a904905c4d74b4269919aca114464f4bb4d911e60de364929181900390910190a15050565b60065481565b60055460ff16610566576040805162461bcd60e51b815260206004820152601c60248201527f43616d706169676e2073686f756c642062652063616e63656c6c656400000000604482015290519081900360640190fd5b6001546001600160a01b031633146105af5760405162461bcd60e51b81526004018080602001828103825260368152602001806109286036913960400191505060405180910390fd5b6105b98282610808565b5050565b600854604080516370a0823160e01b815230600482015290516000926001600160a01b0316916370a08231916024808301926020929190829003018186803b15801561060857600080fd5b505afa15801561061c573d6000803e3d6000fd5b505050506040513d602081101561063257600080fd5b505192915050565b6001546001600160a01b031681565b6000546001600160a01b031681565b60055460ff1681565b60035460045401421190565b60045481565b6001546001600160a01b031633146106bc5760405162461bcd60e51b81526004018080602001828103825260368152602001806109286036913960400191505060405180910390fd5b6001600160a01b03811661070c576040805162461bcd60e51b81526020600482015260126024820152712732b2b21030903b30b634b21030b236b4b760711b604482015290519081900360640190fd5b6001546040516001600160a01b038084169216907f2f4e7de2a1dbac81744f8c97250194a39d96545eb864d155412811ff2f9c9ff890600090a3600180546001600160a01b0319166001600160a01b0392909216919091179055565b60025481565b6000546001600160a01b0316331461078557600080fd5b6001600160a01b03811661079857600080fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b60075481565b6008546001600160a01b031681565b6008546040805163a9059cbb60e01b81526001600160a01b038581166004830152602482018590529151919092169163a9059cbb9160448083019260209291908290030181600087803b15801561085e57600080fd5b505af1158015610872573d6000803e3d6000fd5b505050506040513d602081101561088857600080fd5b50505050565b34156108cb5760405162461bcd60e51b815260040180806020018281038252602281526020018061095e6022913960400191505060405180910390fd5b600854604080516323b872dd60e01b81526001600160a01b03858116600483015230602483015260448201859052915191909216916323b872dd9160648083019260209291908290030181600087803b15801561085e57600080fdfe4f6e6c7920636f6e74726163742061646d696e6973747261746f722063616e20706572666f726d2074686973206f7065726174696f6e4e6f2045544820616c6c6f77656420666f7220455243323020636f6e74726163742ea265627a7a7231582063366d5ba8d2d5deb1376f03eb9df2e301329a86055623120bfc91ff30b5152364736f6c634300050b0032a265627a7a72315820ba5a4191fafb29e5253627e690b1dd94dedfa77199610ccbb8b093f40ff8d78164736f6c634300050b0032",
+  "sourceMap": "120:528:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;120:528:1;;;;;;;",
+  "deployedSourceMap": "120:528:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;120:528:1;;;;;;;;;;;;;;;;;;;177:469;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;177:469:1;;;;;;;;;;;;;-1:-1:-1;;;;;177:469:1;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;177:469:1;;;;;;;;;;;;;;;419:17;487:23;521:15;547:16;574:7;592:13;616;452:187;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;452:187:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;452:187:1;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;448:191:1;177:469;-1:-1:-1;;;;;;;177:469:1:o;120:528::-;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.11;\nimport './ERC20FundingContract.sol';\nimport './FundingContract.sol';\nimport './Deployer.sol';\n\ncontract BiliraFundingContractDeployer is Deployer {\n    function deploy(\n        uint256 _numberOfPlannedPayouts,\n        uint256 _withdrawPeriod,\n        uint256 _campaignEndTime,\n        address payable __owner,\n        address _tokenAddress,\n        address _adminAddress\n    ) external returns(FundingContract c) {\n        c = new ERC20FundingContract(\n         _numberOfPlannedPayouts,\n         _withdrawPeriod,\n         _campaignEndTime,\n         __owner,\n         _tokenAddress,\n         _adminAddress\n        );\n    }\n}",
+  "sourcePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/BiliraFundingContractDeployer.sol",
+  "ast": {
+    "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/BiliraFundingContractDeployer.sol",
+    "exportedSymbols": {
+      "BiliraFundingContractDeployer": [
+        272
+      ]
+    },
+    "id": 273,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 236,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/ERC20FundingContract.sol",
+        "file": "./ERC20FundingContract.sol",
+        "id": 237,
+        "nodeType": "ImportDirective",
+        "scope": 273,
+        "sourceUnit": 552,
+        "src": "25:36:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol",
+        "file": "./FundingContract.sol",
+        "id": 238,
+        "nodeType": "ImportDirective",
+        "scope": 273,
+        "sourceUnit": 624,
+        "src": "62:31:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
+        "file": "./Deployer.sol",
+        "id": 239,
+        "nodeType": "ImportDirective",
+        "scope": 273,
+        "sourceUnit": 339,
+        "src": "94:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 240,
+              "name": "Deployer",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 338,
+              "src": "162:8:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Deployer_$338",
+                "typeString": "contract Deployer"
+              }
+            },
+            "id": 241,
+            "nodeType": "InheritanceSpecifier",
+            "src": "162:8:1"
+          }
+        ],
+        "contractDependencies": [
+          338,
+          551
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 272,
+        "linearizedBaseContracts": [
+          272,
+          338
+        ],
+        "name": "BiliraFundingContractDeployer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 270,
+              "nodeType": "Block",
+              "src": "438:208:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 268,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 258,
+                      "name": "c",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 256,
+                      "src": "448:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_FundingContract_$623",
+                        "typeString": "contract FundingContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 261,
+                          "name": "_numberOfPlannedPayouts",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 243,
+                          "src": "487:23:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 262,
+                          "name": "_withdrawPeriod",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 245,
+                          "src": "521:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 263,
+                          "name": "_campaignEndTime",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 247,
+                          "src": "547:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 264,
+                          "name": "__owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 249,
+                          "src": "574:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 265,
+                          "name": "_tokenAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 251,
+                          "src": "592:13:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 266,
+                          "name": "_adminAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 253,
+                          "src": "616:13:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 260,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "452:24:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_address_payable_$_t_address_$_t_address_$returns$_t_contract$_ERC20FundingContract_$551_$",
+                          "typeString": "function (uint256,uint256,uint256,address payable,address,address) returns (contract ERC20FundingContract)"
+                        },
+                        "typeName": {
+                          "contractScope": null,
+                          "id": 259,
+                          "name": "ERC20FundingContract",
+                          "nodeType": "UserDefinedTypeName",
+                          "referencedDeclaration": 551,
+                          "src": "456:20:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ERC20FundingContract_$551",
+                            "typeString": "contract ERC20FundingContract"
+                          }
+                        }
+                      },
+                      "id": 267,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "452:187:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20FundingContract_$551",
+                        "typeString": "contract ERC20FundingContract"
+                      }
+                    },
+                    "src": "448:191:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_FundingContract_$623",
+                      "typeString": "contract FundingContract"
+                    }
+                  },
+                  "id": 269,
+                  "nodeType": "ExpressionStatement",
+                  "src": "448:191:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 271,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deploy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 254,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 243,
+                  "name": "_numberOfPlannedPayouts",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "202:31:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 242,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "202:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 245,
+                  "name": "_withdrawPeriod",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "243:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 244,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "243:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 247,
+                  "name": "_campaignEndTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "276:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 246,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 249,
+                  "name": "__owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "310:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 248,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:15:1",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 251,
+                  "name": "_tokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "343:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 250,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "343:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 253,
+                  "name": "_adminAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "374:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 252,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "374:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "192:209:1"
+            },
+            "returnParameters": {
+              "id": 257,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 256,
+                  "name": "c",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "419:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_FundingContract_$623",
+                    "typeString": "contract FundingContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 255,
+                    "name": "FundingContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 623,
+                    "src": "419:15:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_FundingContract_$623",
+                      "typeString": "contract FundingContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "418:19:1"
+            },
+            "scope": 272,
+            "src": "177:469:1",
+            "stateMutability": "nonpayable",
+            "superFunction": 337,
+            "visibility": "external"
+          }
+        ],
+        "scope": 273,
+        "src": "120:528:1"
+      }
+    ],
+    "src": "0:648:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/BiliraFundingContractDeployer.sol",
+    "exportedSymbols": {
+      "BiliraFundingContractDeployer": [
+        272
+      ]
+    },
+    "id": 273,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 236,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/ERC20FundingContract.sol",
+        "file": "./ERC20FundingContract.sol",
+        "id": 237,
+        "nodeType": "ImportDirective",
+        "scope": 273,
+        "sourceUnit": 552,
+        "src": "25:36:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol",
+        "file": "./FundingContract.sol",
+        "id": 238,
+        "nodeType": "ImportDirective",
+        "scope": 273,
+        "sourceUnit": 624,
+        "src": "62:31:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
+        "file": "./Deployer.sol",
+        "id": 239,
+        "nodeType": "ImportDirective",
+        "scope": 273,
+        "sourceUnit": 339,
+        "src": "94:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 240,
+              "name": "Deployer",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 338,
+              "src": "162:8:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Deployer_$338",
+                "typeString": "contract Deployer"
+              }
+            },
+            "id": 241,
+            "nodeType": "InheritanceSpecifier",
+            "src": "162:8:1"
+          }
+        ],
+        "contractDependencies": [
+          338,
+          551
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 272,
+        "linearizedBaseContracts": [
+          272,
+          338
+        ],
+        "name": "BiliraFundingContractDeployer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 270,
+              "nodeType": "Block",
+              "src": "438:208:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 268,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 258,
+                      "name": "c",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 256,
+                      "src": "448:1:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_FundingContract_$623",
+                        "typeString": "contract FundingContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 261,
+                          "name": "_numberOfPlannedPayouts",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 243,
+                          "src": "487:23:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 262,
+                          "name": "_withdrawPeriod",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 245,
+                          "src": "521:15:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 263,
+                          "name": "_campaignEndTime",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 247,
+                          "src": "547:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 264,
+                          "name": "__owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 249,
+                          "src": "574:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 265,
+                          "name": "_tokenAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 251,
+                          "src": "592:13:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 266,
+                          "name": "_adminAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 253,
+                          "src": "616:13:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 260,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "452:24:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_address_payable_$_t_address_$_t_address_$returns$_t_contract$_ERC20FundingContract_$551_$",
+                          "typeString": "function (uint256,uint256,uint256,address payable,address,address) returns (contract ERC20FundingContract)"
+                        },
+                        "typeName": {
+                          "contractScope": null,
+                          "id": 259,
+                          "name": "ERC20FundingContract",
+                          "nodeType": "UserDefinedTypeName",
+                          "referencedDeclaration": 551,
+                          "src": "456:20:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ERC20FundingContract_$551",
+                            "typeString": "contract ERC20FundingContract"
+                          }
+                        }
+                      },
+                      "id": 267,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "452:187:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20FundingContract_$551",
+                        "typeString": "contract ERC20FundingContract"
+                      }
+                    },
+                    "src": "448:191:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_FundingContract_$623",
+                      "typeString": "contract FundingContract"
+                    }
+                  },
+                  "id": 269,
+                  "nodeType": "ExpressionStatement",
+                  "src": "448:191:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 271,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deploy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 254,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 243,
+                  "name": "_numberOfPlannedPayouts",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "202:31:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 242,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "202:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 245,
+                  "name": "_withdrawPeriod",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "243:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 244,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "243:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 247,
+                  "name": "_campaignEndTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "276:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 246,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 249,
+                  "name": "__owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "310:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 248,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:15:1",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 251,
+                  "name": "_tokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "343:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 250,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "343:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 253,
+                  "name": "_adminAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "374:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 252,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "374:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "192:209:1"
+            },
+            "returnParameters": {
+              "id": 257,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 256,
+                  "name": "c",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 271,
+                  "src": "419:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_FundingContract_$623",
+                    "typeString": "contract FundingContract"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 255,
+                    "name": "FundingContract",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 623,
+                    "src": "419:15:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_FundingContract_$623",
+                      "typeString": "contract FundingContract"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "418:19:1"
+            },
+            "scope": 272,
+            "src": "177:469:1",
+            "stateMutability": "nonpayable",
+            "superFunction": 337,
+            "visibility": "external"
+          }
+        ],
+        "scope": 273,
+        "src": "120:528:1"
+      }
+    ],
+    "src": "0:648:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.11+commit.c082d0b4.Emscripten.clang"
+  },
+  "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x184369ccA96733c28f0275B611db9F44bb45e013",
+      "transactionHash": "0x1170894db225ae0c835ecbffe900a86b8affeaa4a2a921eb5814039f690732fc"
+    }
+  },
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-01-25T22:49:41.064Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

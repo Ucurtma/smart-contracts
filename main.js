@@ -6,11 +6,12 @@ const BiliraFundingContractDeployer = require('./build/contracts/BiliraFundingCo
 const Deployer = require('./build/contracts/Deployer.json');
 const DeploymentManager = require('./build/contracts/DeploymentManager.json');
 
-module.exports = {
+module.exports.contracts = {
   Token,
   ERC20FundingContract,
-  // AbstractFundingContract,
-  // FundingContract,
+  AbstractFundingContract,
+  FundingContract,
+  Deployer,
   BiliraFundingContractDeployer,
   DeploymentManager
 };

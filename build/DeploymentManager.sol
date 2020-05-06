@@ -85,12 +85,23 @@ contract DeploymentManager is Destructible {
         address contractAddress;
     }
 
-    Deployer erc20Deployer;
+    modifier isAllowedUser() {
+        require(
+            allowedUsers[msg.sender] == true,
+            "You are not allowed to deploy a campaign."
+        );
+        _;
+    }
 
-    DeployedContract[] public deployedContracts;
+    Deployer erc20Deployer;
+    
+
+    mapping(address => bool) public allowedUsers;
+    mapping(address => DeployedContract[]) public deployedContracts;
 
     constructor(address _erc20Deployer) public {
         erc20Deployer = Deployer(_erc20Deployer);
+        allowedUsers[msg.sender] = true;
     }
 
     event NewFundingContract(
@@ -102,26 +113,36 @@ contract DeploymentManager is Destructible {
         erc20Deployer = Deployer(_erc20Deployer);
     }
 
+    function updateAllowedUserPermission(address _user, bool _isAllowed)
+        external
+        onlyOwner
+    {
+        require(_user != address(0), "User must be a valid address");
+        allowedUsers[_user] = _isAllowed;
+    }
+
     function deploy(
         uint256 _numberOfPlannedPayouts,
         uint256 _withdrawPeriod,
         uint256 _campaignEndTime,
         address payable __owner,
         address _tokenAddress
-    ) external onlyOwner {
-        if(_tokenAddress == address(0)){
-          revert('Can only deploy ERC20 Funding Campaign Contract');
+    ) external isAllowedUser {
+        if (_tokenAddress == address(0)) {
+            revert("Can only deploy ERC20 Funding Campaign Contract");
         }
 
         FundingContract c = erc20Deployer.deploy(
-                _numberOfPlannedPayouts,
-                _withdrawPeriod,
-                _campaignEndTime,
-                __owner,
-                _tokenAddress,
-                msg.sender
-            );
-        deployedContracts.push(DeployedContract(msg.sender,address(c)));
+            _numberOfPlannedPayouts,
+            _withdrawPeriod,
+            _campaignEndTime,
+            __owner,
+            _tokenAddress,
+            msg.sender
+        );
+        deployedContracts[msg.sender].push(
+            DeployedContract(msg.sender, address(c))
+        );
         emit NewFundingContract(address(c), msg.sender);
     }
 }

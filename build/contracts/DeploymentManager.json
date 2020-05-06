@@ -4609,14 +4609,56 @@
       "transactionHash": "0x55c329fbc866f5e1cd5ffbbd85e99dfd107be0f3ca3289049478276d1c441654"
     },
     "4": {
-      "events": {},
+      "events": {
+        "0x5ec743f1d0419091a427f519206ded3ef1711d57bdf2e82e2ad58a38b6165c25": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "deployedAddress",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "deployer",
+              "type": "address"
+            }
+          ],
+          "name": "NewFundingContract",
+          "type": "event",
+          "signature": "0x5ec743f1d0419091a427f519206ded3ef1711d57bdf2e82e2ad58a38b6165c25"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
       "links": {},
-      "address": "0x6dB40387b6fCfe6e6B0C812D4FA7B3a646F13479",
-      "transactionHash": "0x137b86dbddb80800e8c36d26178b6b6bcb0b0d5bec4bd11a65774135db9b4a52"
+      "address": "0x0E21a3218EB8bF3aAF9b22d89b117A767DD6a2fF",
+      "transactionHash": "0x1b41f9a2a1fffb6253ad0a829f3d8d243e56890f30cb024109e8cd203a2b6056"
     }
   },
-  "schemaVersion": "3.1.0",
-  "updatedAt": "2020-05-06T20:35:39.966Z",
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-05-06T20:42:05.760Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {
       "destroy()": {

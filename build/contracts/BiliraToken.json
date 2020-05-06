@@ -1496,8 +1496,9 @@
     "version": "0.5.11+commit.c082d0b4.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.1.0",
-  "updatedAt": "2020-05-06T20:22:51.052Z",
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-05-06T20:42:05.764Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {

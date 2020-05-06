@@ -1061,12 +1061,13 @@
     "4": {
       "events": {},
       "links": {},
-      "address": "0x184369ccA96733c28f0275B611db9F44bb45e013",
-      "transactionHash": "0x1170894db225ae0c835ecbffe900a86b8affeaa4a2a921eb5814039f690732fc"
+      "address": "0x0b972a1fA7F2A3833F04E2B2B75A78b7096ACe77",
+      "transactionHash": "0xd2a654bbec989c9fdd620ed83f0a3a95860f6feb11568cd5c97b0b0d974daf7a"
     }
   },
-  "schemaVersion": "3.1.0",
-  "updatedAt": "2020-05-06T20:35:39.964Z",
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-05-06T20:42:05.763Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

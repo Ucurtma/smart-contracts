@@ -48,15 +48,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberOfPlannedPayouts\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_withdrawPeriod\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_campaignEndTime\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"__owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_adminAddress\",\"type\":\"address\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"contract FundingContract\",\"name\":\"c\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":\"Deployer\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":{\"keccak256\":\"0x1ae0f4dfafadb465fb95a90390f1b33ee3a21ae0511dab63771618a28c0492a5\",\"urls\":[\"bzz-raw://f4d8647c4145d7cbc98a91cd0e733b8dba631b7d776650997d1bd5ce74d7ae4b\",\"dweb:/ipfs/QmVzLMqxaTSFqxjuuZTGWsnDNh1JahN9ecHKztVNBTf6Cz\"]},\"/Users/mert/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol\":{\"keccak256\":\"0x9f9db102c903305f10960d5c1906da20ce05cd81d8ecfabb91f49fbc759d77a6\",\"urls\":[\"bzz-raw://c3ab1887576ad924d0781f05f1952e5e710eeee84e1cb23831759e34c681e82e\",\"dweb:/ipfs/QmaFU3iqzeKBGLLXjTqcdXyeTdkRHmJ2Krc3XUFbgo36gP\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberOfPlannedPayouts\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_withdrawPeriod\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_campaignEndTime\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"__owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_adminAddress\",\"type\":\"address\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"contract FundingContract\",\"name\":\"c\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":\"Deployer\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":{\"keccak256\":\"0x1ae0f4dfafadb465fb95a90390f1b33ee3a21ae0511dab63771618a28c0492a5\",\"urls\":[\"bzz-raw://f4d8647c4145d7cbc98a91cd0e733b8dba631b7d776650997d1bd5ce74d7ae4b\",\"dweb:/ipfs/QmVzLMqxaTSFqxjuuZTGWsnDNh1JahN9ecHKztVNBTf6Cz\"]},\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol\":{\"keccak256\":\"0x9f9db102c903305f10960d5c1906da20ce05cd81d8ecfabb91f49fbc759d77a6\",\"urls\":[\"bzz-raw://c3ab1887576ad924d0781f05f1952e5e710eeee84e1cb23831759e34c681e82e\",\"dweb:/ipfs/QmaFU3iqzeKBGLLXjTqcdXyeTdkRHmJ2Krc3XUFbgo36gP\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.11;\nimport './FundingContract.sol';\n\ninterface Deployer {\n    function deploy(\n        uint256 _numberOfPlannedPayouts,\n        uint256 _withdrawPeriod,\n        uint256 _campaignEndTime,\n        address payable __owner,\n        address _tokenAddress,\n        address _adminAddress\n    )external returns(FundingContract c);\n}",
-  "sourcePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
+  "sourcePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
   "ast": {
-    "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
+    "absolutePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
     "exportedSymbols": {
       "Deployer": [
         338
@@ -77,12 +77,12 @@
         "src": "0:24:3"
       },
       {
-        "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol",
+        "absolutePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol",
         "file": "./FundingContract.sol",
         "id": 320,
         "nodeType": "ImportDirective",
         "scope": 339,
-        "sourceUnit": 624,
+        "sourceUnit": 678,
         "src": "25:31:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -289,7 +289,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_FundingContract_$623",
+                    "typeIdentifier": "t_contract$_FundingContract_$677",
                     "typeString": "contract FundingContract"
                   },
                   "typeName": {
@@ -297,10 +297,10 @@
                     "id": 334,
                     "name": "FundingContract",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 623,
+                    "referencedDeclaration": 677,
                     "src": "324:15:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_FundingContract_$623",
+                      "typeIdentifier": "t_contract$_FundingContract_$677",
                       "typeString": "contract FundingContract"
                     }
                   },
@@ -324,7 +324,7 @@
     "src": "0:345:3"
   },
   "legacyAST": {
-    "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
+    "absolutePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
     "exportedSymbols": {
       "Deployer": [
         338
@@ -345,12 +345,12 @@
         "src": "0:24:3"
       },
       {
-        "absolutePath": "/Users/mert/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol",
+        "absolutePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol",
         "file": "./FundingContract.sol",
         "id": 320,
         "nodeType": "ImportDirective",
         "scope": 339,
-        "sourceUnit": 624,
+        "sourceUnit": 678,
         "src": "25:31:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -557,7 +557,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_FundingContract_$623",
+                    "typeIdentifier": "t_contract$_FundingContract_$677",
                     "typeString": "contract FundingContract"
                   },
                   "typeName": {
@@ -565,10 +565,10 @@
                     "id": 334,
                     "name": "FundingContract",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 623,
+                    "referencedDeclaration": 677,
                     "src": "324:15:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_FundingContract_$623",
+                      "typeIdentifier": "t_contract$_FundingContract_$677",
                       "typeString": "contract FundingContract"
                     }
                   },
@@ -596,8 +596,8 @@
     "version": "0.5.11+commit.c082d0b4.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.20",
-  "updatedAt": "2020-01-20T21:08:20.285Z",
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-05-06T20:22:51.053Z",
   "devdoc": {
     "methods": {}
   },

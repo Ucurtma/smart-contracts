@@ -24,6 +24,7 @@ contract DeploymentManager is Destructible {
 
     mapping(address => bool) public allowedUsers;
     mapping(address => DeployedContract[]) public deployedContracts;
+    mapping(address => uint256) public contractsCount;
 
     constructor(address _erc20Deployer) public {
         erc20Deployer = Deployer(_erc20Deployer);
@@ -69,6 +70,7 @@ contract DeploymentManager is Destructible {
         deployedContracts[msg.sender].push(
             DeployedContract(msg.sender, address(c))
         );
+        contractsCount[msg.sender] += 1;
         emit NewFundingContract(address(c), msg.sender);
     }
 }

@@ -30,6 +30,13 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
         address payable __owner,
         address _administrator
     ) public AdminControlled(_administrator) {
+        require(_numberOfPlannedPayouts > 0, "Invalid number of payouts");
+        require(__owner != address(0), "Contract must have owner");
+        require(
+            _administrator != address(0),
+            "Contract must have an initial admin"
+        );
+
         numberOfPlannedPayouts = _numberOfPlannedPayouts;
         withdrawPeriod = _withdrawPeriod;
         owner = __owner;

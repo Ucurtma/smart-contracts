@@ -53,19 +53,19 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
 
     // Functions
     // AbstractFundingContract
-    function withdraw() external notCancelled onlyOwner {
+    function withdraw() external notCancelled {
         require(canWithdraw(), "Not allowed to withdraw");
-        uint256 leftBalance = totalBalance(msg.sender);
+        uint256 leftBalance = totalBalance(owner);
 
         require(leftBalance > 0, "Insufficient funds");
         uint256 payoutAmount = uint256(leftBalance) / totalNumberOfPayoutsLeft;
 
         // withdraw money and make the transfer to the owner.
-        doWithdraw(msg.sender, payoutAmount);
+        doWithdraw(owner, payoutAmount);
         totalNumberOfPayoutsLeft--;
         lastWithdraw = now;
 
-        emit PayoutWithdrawed(msg.sender, payoutAmount);
+        emit PayoutWithdrawed(owner, payoutAmount, msg.sender);
     }
 
     function toggleCancellation() external onlyAdmin returns (bool) {

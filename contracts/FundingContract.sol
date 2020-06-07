@@ -14,7 +14,7 @@ Student:
 
 interface FundingContract {
   // Events
-  event PayoutWithdrawed(address toAddress, uint256 amount);
+  event PayoutWithdrawed(address toAddress, uint256 amount, address triggered);
   event NewDeposit(address from, uint256 amount);
 
   // Variables

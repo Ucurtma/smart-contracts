@@ -48,7 +48,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberOfPlannedPayouts\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_withdrawPeriod\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_campaignEndTime\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"__owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_adminAddress\",\"type\":\"address\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"contract FundingContract\",\"name\":\"c\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":\"Deployer\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":{\"keccak256\":\"0x1ae0f4dfafadb465fb95a90390f1b33ee3a21ae0511dab63771618a28c0492a5\",\"urls\":[\"bzz-raw://f4d8647c4145d7cbc98a91cd0e733b8dba631b7d776650997d1bd5ce74d7ae4b\",\"dweb:/ipfs/QmVzLMqxaTSFqxjuuZTGWsnDNh1JahN9ecHKztVNBTf6Cz\"]},\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol\":{\"keccak256\":\"0x9f9db102c903305f10960d5c1906da20ce05cd81d8ecfabb91f49fbc759d77a6\",\"urls\":[\"bzz-raw://c3ab1887576ad924d0781f05f1952e5e710eeee84e1cb23831759e34c681e82e\",\"dweb:/ipfs/QmaFU3iqzeKBGLLXjTqcdXyeTdkRHmJ2Krc3XUFbgo36gP\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.11+commit.c082d0b4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberOfPlannedPayouts\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_withdrawPeriod\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_campaignEndTime\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"__owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_adminAddress\",\"type\":\"address\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"contract FundingContract\",\"name\":\"c\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":\"Deployer\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol\":{\"keccak256\":\"0x1ae0f4dfafadb465fb95a90390f1b33ee3a21ae0511dab63771618a28c0492a5\",\"urls\":[\"bzz-raw://f4d8647c4145d7cbc98a91cd0e733b8dba631b7d776650997d1bd5ce74d7ae4b\",\"dweb:/ipfs/QmVzLMqxaTSFqxjuuZTGWsnDNh1JahN9ecHKztVNBTf6Cz\"]},\"/Users/msusur/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol\":{\"keccak256\":\"0x8636ff660952f82d0ab28f59c20789823ebfb5292fc453806306cdf2840f9b6f\",\"urls\":[\"bzz-raw://fe65031e11d19f6c1d0a5aa0570bd542af648c3ad9d2e39d61970db4aa9078f8\",\"dweb:/ipfs/QmRkSdr8us1Mzgrq9wnRWs2j5vqksTQ8omZ8586pNXXhYg\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
@@ -59,14 +59,14 @@
     "absolutePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
     "exportedSymbols": {
       "Deployer": [
-        338
+        360
       ]
     },
-    "id": 339,
+    "id": 361,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 319,
+        "id": 341,
         "literals": [
           "solidity",
           "^",
@@ -79,10 +79,10 @@
       {
         "absolutePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol",
         "file": "./FundingContract.sol",
-        "id": 320,
+        "id": 342,
         "nodeType": "ImportDirective",
-        "scope": 339,
-        "sourceUnit": 678,
+        "scope": 361,
+        "sourceUnit": 713,
         "src": "25:31:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -93,9 +93,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 338,
+        "id": 360,
         "linearizedBaseContracts": [
-          338
+          360
         ],
         "name": "Deployer",
         "nodeType": "ContractDefinition",
@@ -103,22 +103,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 337,
+            "id": 359,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "deploy",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 333,
+              "id": 355,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 322,
+                  "id": 344,
                   "name": "_numberOfPlannedPayouts",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "108:31:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -127,7 +127,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 321,
+                    "id": 343,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "108:7:3",
@@ -141,10 +141,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 324,
+                  "id": 346,
                   "name": "_withdrawPeriod",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "149:23:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -153,7 +153,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 323,
+                    "id": 345,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "149:7:3",
@@ -167,10 +167,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 326,
+                  "id": 348,
                   "name": "_campaignEndTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "182:24:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -179,7 +179,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 325,
+                    "id": 347,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "182:7:3",
@@ -193,10 +193,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 328,
+                  "id": 350,
                   "name": "__owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "216:23:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -205,7 +205,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 327,
+                    "id": 349,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "216:15:3",
@@ -220,10 +220,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 330,
+                  "id": 352,
                   "name": "_tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "249:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -232,7 +232,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 329,
+                    "id": 351,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "249:7:3",
@@ -247,10 +247,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 332,
+                  "id": 354,
                   "name": "_adminAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "280:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -259,7 +259,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 331,
+                    "id": 353,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "280:7:3",
@@ -276,31 +276,31 @@
               "src": "98:209:3"
             },
             "returnParameters": {
-              "id": 336,
+              "id": 358,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 335,
+                  "id": 357,
                   "name": "c",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "324:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_FundingContract_$677",
+                    "typeIdentifier": "t_contract$_FundingContract_$712",
                     "typeString": "contract FundingContract"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 334,
+                    "id": 356,
                     "name": "FundingContract",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 677,
+                    "referencedDeclaration": 712,
                     "src": "324:15:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_FundingContract_$677",
+                      "typeIdentifier": "t_contract$_FundingContract_$712",
                       "typeString": "contract FundingContract"
                     }
                   },
@@ -310,14 +310,14 @@
               ],
               "src": "323:19:3"
             },
-            "scope": 338,
+            "scope": 360,
             "src": "83:260:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 339,
+        "scope": 361,
         "src": "58:287:3"
       }
     ],
@@ -327,14 +327,14 @@
     "absolutePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/Deployer.sol",
     "exportedSymbols": {
       "Deployer": [
-        338
+        360
       ]
     },
-    "id": 339,
+    "id": 361,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 319,
+        "id": 341,
         "literals": [
           "solidity",
           "^",
@@ -347,10 +347,10 @@
       {
         "absolutePath": "/Users/msusur/dev/msusur/ucurtma-contracts/contracts/FundingContract.sol",
         "file": "./FundingContract.sol",
-        "id": 320,
+        "id": 342,
         "nodeType": "ImportDirective",
-        "scope": 339,
-        "sourceUnit": 678,
+        "scope": 361,
+        "sourceUnit": 713,
         "src": "25:31:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -361,9 +361,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 338,
+        "id": 360,
         "linearizedBaseContracts": [
-          338
+          360
         ],
         "name": "Deployer",
         "nodeType": "ContractDefinition",
@@ -371,22 +371,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 337,
+            "id": 359,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "deploy",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 333,
+              "id": 355,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 322,
+                  "id": 344,
                   "name": "_numberOfPlannedPayouts",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "108:31:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -395,7 +395,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 321,
+                    "id": 343,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "108:7:3",
@@ -409,10 +409,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 324,
+                  "id": 346,
                   "name": "_withdrawPeriod",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "149:23:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -421,7 +421,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 323,
+                    "id": 345,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "149:7:3",
@@ -435,10 +435,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 326,
+                  "id": 348,
                   "name": "_campaignEndTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "182:24:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -447,7 +447,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 325,
+                    "id": 347,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "182:7:3",
@@ -461,10 +461,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 328,
+                  "id": 350,
                   "name": "__owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "216:23:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -473,7 +473,7 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 327,
+                    "id": 349,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "216:15:3",
@@ -488,10 +488,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 330,
+                  "id": 352,
                   "name": "_tokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "249:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -500,7 +500,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 329,
+                    "id": 351,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "249:7:3",
@@ -515,10 +515,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 332,
+                  "id": 354,
                   "name": "_adminAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "280:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -527,7 +527,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 331,
+                    "id": 353,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "280:7:3",
@@ -544,31 +544,31 @@
               "src": "98:209:3"
             },
             "returnParameters": {
-              "id": 336,
+              "id": 358,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 335,
+                  "id": 357,
                   "name": "c",
                   "nodeType": "VariableDeclaration",
-                  "scope": 337,
+                  "scope": 359,
                   "src": "324:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_FundingContract_$677",
+                    "typeIdentifier": "t_contract$_FundingContract_$712",
                     "typeString": "contract FundingContract"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 334,
+                    "id": 356,
                     "name": "FundingContract",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 677,
+                    "referencedDeclaration": 712,
                     "src": "324:15:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_FundingContract_$677",
+                      "typeIdentifier": "t_contract$_FundingContract_$712",
                       "typeString": "contract FundingContract"
                     }
                   },
@@ -578,14 +578,14 @@
               ],
               "src": "323:19:3"
             },
-            "scope": 338,
+            "scope": 360,
             "src": "83:260:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 339,
+        "scope": 361,
         "src": "58:287:3"
       }
     ],
@@ -596,8 +596,8 @@
     "version": "0.5.11+commit.c082d0b4.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.1.0",
-  "updatedAt": "2020-05-06T20:22:51.053Z",
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-06-07T15:36:29.420Z",
   "devdoc": {
     "methods": {}
   },

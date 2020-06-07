@@ -66,7 +66,7 @@ module.exports = {
           0,
           num_addresses
         ),
-      gasPrice: 1000000000, // 1 gwei
+      gasPrice: 44000000000, // 1 gwei
       port: 8545,
       network_id: 1,
       confirmations: 20

@@ -10,6 +10,7 @@ contract BiliraFundingContractDeployer is Deployer {
         uint256 _numberOfPlannedPayouts,
         uint256 _withdrawPeriod,
         uint256 _campaignEndTime,
+        uint256 _amountPerPayment,
         address payable __owner,
         address _tokenAddress,
         address _adminAddress
@@ -18,6 +19,7 @@ contract BiliraFundingContractDeployer is Deployer {
             _numberOfPlannedPayouts,
             _withdrawPeriod,
             _campaignEndTime,
+            _amountPerPayment,
             __owner,
             _tokenAddress,
             _adminAddress

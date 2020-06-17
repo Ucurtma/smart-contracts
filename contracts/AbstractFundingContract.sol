@@ -4,9 +4,9 @@ import "./FundingContract.sol";
 import "./zeppelin/ownership/Ownable.sol";
 import "./zeppelin/ownership/AdminControlled.sol";
 
-
 contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
     uint256 public numberOfPlannedPayouts;
+    uint256 public amountPerPayment;
     uint256 public withdrawPeriod;
     uint256 public lastWithdraw;
     bool public cancelled;
@@ -27,6 +27,7 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
         uint256 _numberOfPlannedPayouts,
         uint256 _withdrawPeriod,
         uint256 _campaignEndTime,
+        uint256 _amountPerPayment,
         address payable __owner,
         address _administrator
     ) public AdminControlled(_administrator) {
@@ -41,6 +42,7 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
         withdrawPeriod = _withdrawPeriod;
         owner = __owner;
         totalNumberOfPayoutsLeft = numberOfPlannedPayouts;
+        amountPerPayment = _amountPerPayment;
 
         // consider the last withdraw date is the last day of campaign
         lastWithdraw = _campaignEndTime;
@@ -58,7 +60,11 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
         uint256 leftBalance = totalBalance(owner);
 
         require(leftBalance > 0, "Insufficient funds");
-        uint256 payoutAmount = uint256(leftBalance) / totalNumberOfPayoutsLeft;
+        uint256 payoutAmount = getPayoutAmount(
+            uint256(leftBalance),
+            totalNumberOfPayoutsLeft,
+            amountPerPayment
+        );
 
         // withdraw money and make the transfer to the owner.
         doWithdraw(owner, payoutAmount);
@@ -103,6 +109,14 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
         address, /* donator */
         uint256 /* amount */
     ) internal {
+        revert("This must be implemented in the inheriting class");
+    }
+
+    function getPayoutAmount(
+        uint256 /* leftBalance */,
+        uint256 /* totalNumberOfPayoutsLeft */,
+        uint256 /* amountPerPayment */
+    ) internal view returns (uint256) {
         revert("This must be implemented in the inheriting class");
     }
 }

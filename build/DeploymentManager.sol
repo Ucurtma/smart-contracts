@@ -73,10 +73,11 @@ interface Deployer {
         uint256 _numberOfPlannedPayouts,
         uint256 _withdrawPeriod,
         uint256 _campaignEndTime,
+        uint256 _amountPerPayment,
         address payable __owner,
         address _tokenAddress,
         address _adminAddress
-    )external returns(FundingContract c);
+    ) external returns (FundingContract c);
 }
 
 contract DeploymentManager is Destructible {
@@ -126,6 +127,7 @@ contract DeploymentManager is Destructible {
         uint256 _numberOfPlannedPayouts,
         uint256 _withdrawPeriod,
         uint256 _campaignEndTime,
+        uint256 _amountPerPayment,
         address payable __owner,
         address _tokenAddress
     ) external isAllowedUser {
@@ -137,6 +139,7 @@ contract DeploymentManager is Destructible {
             _numberOfPlannedPayouts,
             _withdrawPeriod,
             _campaignEndTime,
+            _amountPerPayment,
             __owner,
             _tokenAddress,
             msg.sender
@@ -146,5 +149,18 @@ contract DeploymentManager is Destructible {
         );
         contractsCount[msg.sender] += 1;
         emit NewFundingContract(address(c), msg.sender);
+    }
+
+    function withdrawFromAllContracts() public {
+        DeployedContract[] storage contracts = deployedContracts[msg.sender];
+        uint256 totalContracts = contracts.length;
+        require(totalContracts > 0, "No contract deployed");
+
+        for (uint256 index = 0; index < contracts.length; index++) {
+            FundingContract fundingContract = FundingContract(
+                contracts[index].contractAddress
+            );
+            fundingContract.withdraw();
+        }
     }
 }

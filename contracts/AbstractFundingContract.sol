@@ -56,6 +56,7 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
     // Functions
     // AbstractFundingContract
     function withdraw() external notCancelled {
+        require(totalNumberOfPayoutsLeft > 0, "No withdraw left");
         require(canWithdraw(), "Not allowed to withdraw");
         uint256 leftBalance = totalBalance(owner);
 

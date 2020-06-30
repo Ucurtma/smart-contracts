@@ -5,7 +5,7 @@ module.exports = {
   networks: {
     development: {
       host: 'localhost',
-      port: 8545,
+      port: 8548,
       gas: 6712388,
       // gasPrice: 2000000000, // 1 gwei
       network_id: '*'

@@ -1,97 +1,102 @@
 pragma solidity ^0.5.11;
 
-
 contract Ownable {
-  address payable public owner;
+    address payable public owner;
 
+    event OwnershipTransferred(
+        address indexed previousOwner,
+        address indexed newOwner
+    );
 
-  event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    constructor() public {
+        owner = msg.sender;
+    }
 
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
 
-  
-  constructor() public {
-    owner = msg.sender;
-  }
-
-
-  
-  modifier onlyOwner() {
-    require(msg.sender == owner);
-    _;
-  }
-
-
-  
-  function transferOwnership(address payable newOwner) public onlyOwner {
-    require(newOwner != address(0));
-    emit OwnershipTransferred(owner, newOwner);
-    owner = newOwner;
-  }
-
+    function transferOwnership(address payable newOwner) public onlyOwner {
+        require(newOwner != address(0));
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
+    }
 }
 
 interface IERC20 {
-    
     function totalSupply() external view returns (uint256);
 
-    
     function balanceOf(address account) external view returns (uint256);
 
-    
-    function transfer(address recipient, uint256 amount) external returns (bool);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
 
-    
-    function allowance(address owner, address spender) external view returns (uint256);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
 
-    
     function approve(address spender, uint256 amount) external returns (bool);
 
-    
-    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) external returns (bool);
 
-    
     event Transfer(address indexed from, address indexed to, uint256 value);
 
-    
-    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
 }
 
 contract Destructible is Ownable {
+    constructor() public payable {}
 
-  constructor() public payable { }
+    function destroy() public onlyOwner {
+        selfdestruct(owner);
+    }
 
-  
-  function destroy() public onlyOwner {
-    selfdestruct(owner);
-  }
-
-  function destroyAndSend(address payable _recipient) public onlyOwner {
-    selfdestruct(_recipient);
-  }
+    function destroyAndSend(address payable _recipient) public onlyOwner {
+        selfdestruct(_recipient);
+    }
 }
 
 interface FundingContract {
-  
-  event PayoutWithdrawed(address toAddress, uint256 amount, address triggered);
-  event NewDeposit(address from, uint256 amount);
+    event PayoutWithdrawed(
+        address toAddress,
+        uint256 amount,
+        address triggered
+    );
+    event NewDeposit(address from, uint256 amount);
 
-  
-  
-  function owner() external view returns (address);
-  
-  function withdrawLimit() external view returns(uint256);
-  function withdrawPeriod() external view returns(uint256);
-  function lastWithdraw() external view returns(uint256);
-  function canWithdraw() external view returns(bool);
-  function cancelled() external view returns (bool);
-  function totalNumberOfPayoutsLeft() external view returns (uint256);
+    function owner() external view returns (address);
 
-  
-  
-  function withdraw() external;
-  function deposit(address donator, uint256 amount) external;
-  function paybackTokens(address payable originalPayee, uint256 amount) external;
-  function toggleCancellation() external returns(bool);
+    function withdrawLimit() external view returns (uint256);
+
+    function withdrawPeriod() external view returns (uint256);
+
+    function lastWithdraw() external view returns (uint256);
+
+    function canWithdraw() external view returns (bool);
+
+    function cancelled() external view returns (bool);
+
+    function totalNumberOfPayoutsLeft() external view returns (uint256);
+
+    function withdraw() external;
+
+    function deposit(address donator, uint256 amount) external;
+
+    function paybackTokens(address payable originalPayee, uint256 amount)
+        external;
+
+    function toggleCancellation() external returns (bool);
 }
 
 interface Deployer {
@@ -121,7 +126,6 @@ contract DeploymentManager is Destructible {
     }
 
     Deployer erc20Deployer;
-    
 
     mapping(address => bool) public allowedUsers;
     mapping(address => DeployedContract[]) public deployedContracts;
@@ -239,12 +243,65 @@ contract FundingManagerContract is Ownable {
         }
     }
 
-    function splitShareAmongCampaigns(uint256 _campaignTopLimit) public {
+    function splitShareCampaigns(
+        address[] _campaigns,
+        uint256 _campaignTopLimit
+    ) external {
+        uint256 campaignsCount = _campaigns.length;
+        require(campaignsCount > 0, "NoContracts");
+
+        IERC20 token = IERC20(tokenAddress);
+        uint256 totalBalanceInContract = token.balanceOf(address(this));
+        require(totalBalanceInContract > 0, "No Money Left");
+        FundingLevel[50] memory fundings;
+        uint256 counter = 0;
+        uint256 totalMissingBalance;
+        for (uint256 index = 0; index < campaignsCount; index += 1) {
+            address currentContractAddress = _campaigns[index];
+            uint256 balanceOfContract = token.balanceOf(currentContractAddress);
+            if (
+                currentContractAddress != address(0) &&
+                !skippedCampaigns[currentContractAddress] &&
+                _campaignTopLimit > balanceOfContract
+            ) {
+                FundingContract campaign = FundingContract(
+                    currentContractAddress
+                );
+                if (!campaign.cancelled()) {
+                    fundings[counter] = FundingLevel(
+                        currentContractAddress,
+                        _campaignTopLimit - balanceOfContract
+                    );
+                    counter += 1;
+                    totalMissingBalance + _campaignTopLimit - balanceOfContract;
+                }
+            }
+        }
+
+        for (
+            uint256 fundingIndex = 0;
+            fundingIndex < counter;
+            fundingIndex += 1
+        ) {
+            FundingLevel memory level = fundings[fundingIndex];
+            uint256 amountToPay = (totalBalanceInContract *
+                level.requiredBalance) / totalMissingBalance;
+            if (amountToPay + level.requiredBalance > _campaignTopLimit) {
+                amountToPay = _campaignTopLimit - level.requiredBalance;
+            }
+            token.transfer(fundings[fundingIndex].campaign, amountToPay);
+        }
+    }
+
+    function splitShareAmongCampaigns(uint256 _campaignTopLimit) external {
         DeploymentManager manager = DeploymentManager(deploymentManager);
         uint256 campaignsCount = manager.contractsCount(msg.sender);
         require(campaignsCount > 0, "NoContracts");
 
         IERC20 token = IERC20(tokenAddress);
+        uint256 totalBalanceInContract = token.balanceOf(address(this));
+        require(totalBalanceInContract > 0, "No Money Left");
+
         FundingLevel[50] memory fundings;
         uint256 counter = 0;
         uint256 totalMissingBalance;
@@ -265,28 +322,33 @@ contract FundingManagerContract is Ownable {
                         currentContractAddress,
                         _campaignTopLimit - balanceOfContract
                     );
-                    counter++;
-                    totalMissingBalance +=
-                        _campaignTopLimit -
-                        balanceOfContract;
+                    counter += 1;
+                    totalMissingBalance + _campaignTopLimit - balanceOfContract;
                 }
             }
         }
-        uint256 totalBalanceInContract = token.balanceOf(address(this));
+
         for (
             uint256 fundingIndex = 0;
             fundingIndex < counter;
             fundingIndex += 1
         ) {
             FundingLevel memory level = fundings[fundingIndex];
-            uint256 amountPerCampaign = (totalBalanceInContract *
+            uint256 amountToPay = (totalBalanceInContract *
                 level.requiredBalance) / totalMissingBalance;
-            token.transfer(fundings[fundingIndex].campaign, amountPerCampaign);
+            if (amountToPay + level.requiredBalance > _campaignTopLimit) {
+                amountToPay = _campaignTopLimit - level.requiredBalance;
+            }
+            token.transfer(fundings[fundingIndex].campaign, amountToPay);
         }
     }
 
     function destroyAndSend() external onlyOwner {
-        IERC20 token = IERC20(tokenAddress);
+        destroyAndSend(tokenAddress);
+    }
+
+    function destroyAndSend(address _tokenAddress) public onlyOwner {
+        IERC20 token = IERC20(_tokenAddress);
         uint256 balance = token.balanceOf(address(this));
         if (balance > 0) {
             token.transfer(owner, balance);
@@ -295,7 +357,7 @@ contract FundingManagerContract is Ownable {
     }
 
     function getCampaign(uint256 num)
-        internal
+        external
         view
         returns (address deployer, address currentContractAddress)
     {

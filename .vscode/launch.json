@@ -53,6 +53,20 @@
         "0xFb4BA4f9a0d80ffda8b11bbcDCD56a0eDd7729E2" ,
         "--rinkeby"
       ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Read all campaigns",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/scripts/load-all-contracts.js",
+      "args": [
+        "--address", 
+        "0x27643cb591111Cf9907bBb81AC3e35D9d3996444",
+        "--rinkeby"
+      ]
     }
   ]
 }

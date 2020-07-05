@@ -64,7 +64,7 @@
       "program": "${workspaceFolder}/scripts/load-all-contracts.js",
       "args": [
         "--address", 
-        "0x27643cb591111Cf9907bBb81AC3e35D9d3996444",
+        "0x5d1499b904698410bf37b35dc1922e13099f8cf4",
         "--rinkeby"
       ]
     }

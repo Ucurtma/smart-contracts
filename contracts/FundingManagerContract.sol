@@ -6,13 +6,17 @@ import "./DeploymentManager.sol";
 import "./FundingContract.sol";
 
 contract FundingManagerContract is Ownable {
+    event SplitSharedFunds(
+        address[] indexed addresses,
+        uint256 indexed totalSpent
+    );
+
     struct FundingLevel {
         address campaign;
         uint256 requiredBalance;
     }
 
     address public deploymentManager;
-    mapping(address => bool) public skippedCampaigns;
     address public tokenAddress;
 
     constructor(address _deploymentManager, address _tokenAddress) public {
@@ -20,16 +24,6 @@ contract FundingManagerContract is Ownable {
         deploymentManager = _deploymentManager;
         tokenAddress = _tokenAddress;
     }
-
-    // function addSkipContract(address _campaignAddress) external onlyOwner {
-    //     require(_campaignAddress != address(0), "AddressNotNull");
-    //     skippedCampaigns[_campaignAddress] = true;
-    // }
-
-    // function removeSkipContract(address _campaignAddress) external onlyOwner {
-    //     require(_campaignAddress != address(0), "AddressNotNull");
-    //     skippedCampaigns[_campaignAddress] = false;
-    // }
 
     function updateDeploymentManager(address _deploymentManager)
         external
@@ -43,11 +37,18 @@ contract FundingManagerContract is Ownable {
         DeploymentManager manager = DeploymentManager(deploymentManager);
         uint256 campaignsCount = manager.contractsCount(msg.sender);
         require(campaignsCount > 0, "NoContracts");
+        IERC20 token = IERC20(tokenAddress);
 
         for (uint256 index = 0; index < campaignsCount; index += 1) {
             (, address currentContractAddress) = getCampaign(index);
             FundingContract campaign = FundingContract(currentContractAddress);
-            if (campaign.canWithdraw() && !campaign.cancelled()) {
+            uint256 campaignBalance = token.balanceOf(currentContractAddress);
+            if (
+                campaign.canWithdraw() &&
+                !campaign.cancelled() &&
+                campaignBalance > 0 &&
+                campaign.totalNumberOfPayoutsLeft() > 0
+            ) {
                 campaign.withdraw();
             }
         }
@@ -64,7 +65,7 @@ contract FundingManagerContract is Ownable {
 
         FundingLevel[25] memory fundings;
         uint256 counter = 0;
-        uint256 totalMissingBalance;
+        uint256 totalBalanceNeed;
         for (uint256 index = 0; index < campaignsCount; index += 1) {
             address currentContractAddress = _campaigns[index];
             uint256 balanceOfContract = token.balanceOf(currentContractAddress);
@@ -75,96 +76,55 @@ contract FundingManagerContract is Ownable {
                 FundingContract campaign = FundingContract(
                     currentContractAddress
                 );
-                if (!campaign.cancelled()) {
+                if (
+                    !campaign.cancelled() &&
+                    campaign.totalNumberOfPayoutsLeft() > 0
+                ) {
                     fundings[counter] = FundingLevel(
                         currentContractAddress,
                         _campaignTopLimit - balanceOfContract
                     );
                     counter += 1;
-                    totalMissingBalance +=
-                        _campaignTopLimit -
-                        balanceOfContract;
+                    totalBalanceNeed += _campaignTopLimit - balanceOfContract;
                 }
             }
         }
-
+        uint256 totalBalanceInContract = token.balanceOf(address(this));
+        require(totalBalanceInContract > 0, "NoMoneyLeft");
+        uint256 spentAmount = 0;
         for (
             uint256 fundingIndex = 0;
             fundingIndex < counter;
             fundingIndex += 1
         ) {
-            uint256 totalBalanceInContract = token.balanceOf(address(this));
-            require(totalBalanceInContract > 0, "No Money Left");
             FundingLevel memory level = fundings[fundingIndex];
             uint256 amountToPay = (totalBalanceInContract *
-                level.requiredBalance) / totalMissingBalance;
+                level.requiredBalance) / totalBalanceNeed;
             if (amountToPay > level.requiredBalance) {
                 amountToPay = level.requiredBalance;
             }
             token.transfer(fundings[fundingIndex].campaign, amountToPay);
+            spentAmount += amountToPay;
         }
-    }
-
-    function splitShareAmongCampaigns(uint256 _campaignTopLimit) public {
-        DeploymentManager manager = DeploymentManager(deploymentManager);
-        uint256 campaignsCount = manager.contractsCount(msg.sender);
-        require(campaignsCount > 0, "NoContracts");
-
-        IERC20 token = IERC20(tokenAddress);
-        uint256 totalBalanceInContract = token.balanceOf(address(this));
-        require(totalBalanceInContract > 0, "No Money Left");
-
-        FundingLevel[50] memory fundings;
-        uint256 counter = 0;
-        uint256 totalMissingBalance;
-
-        for (uint256 index = 0; index < campaignsCount; index += 1) {
-            (, address currentContractAddress) = getCampaign(index);
-            uint256 balanceOfContract = token.balanceOf(currentContractAddress);
-            if (
-                currentContractAddress != address(0) &&
-                !skippedCampaigns[currentContractAddress] &&
-                _campaignTopLimit > balanceOfContract
-            ) {
-                FundingContract campaign = FundingContract(
-                    currentContractAddress
-                );
-                if (!campaign.cancelled()) {
-                    fundings[counter] = FundingLevel(
-                        currentContractAddress,
-                        _campaignTopLimit - balanceOfContract
-                    );
-                    counter += 1;
-                    totalMissingBalance + _campaignTopLimit - balanceOfContract;
-                }
-            }
-        }
-
-        for (
-            uint256 fundingIndex = 0;
-            fundingIndex < counter;
-            fundingIndex += 1
-        ) {
-            FundingLevel memory level = fundings[fundingIndex];
-            uint256 amountToPay = (totalBalanceInContract *
-                level.requiredBalance) / totalMissingBalance;
-            if (amountToPay + level.requiredBalance > _campaignTopLimit) {
-                amountToPay = _campaignTopLimit - level.requiredBalance;
-            }
-            token.transfer(fundings[fundingIndex].campaign, amountToPay);
-        }
+        emit SplitSharedFunds(_campaigns, spentAmount);
     }
 
     function destroyAndSend() external onlyOwner {
         destroyAndSend(tokenAddress);
     }
 
-    function destroyAndSend(address _tokenAddress) public onlyOwner {
+    function sendTokens(address _tokenAddress, address _toAddress)
+        public
+        onlyOwner
+    {
         IERC20 token = IERC20(_tokenAddress);
         uint256 balance = token.balanceOf(address(this));
-        if (balance > 0) {
-            token.transfer(owner, balance);
-        }
+        require(balance > 0, "InsufficientBalance");
+        token.transfer(_toAddress, balance);
+    }
+
+    function destroyAndSend(address _tokenAddress) public onlyOwner {
+        sendTokens(_tokenAddress, owner);
         selfdestruct(owner);
     }
 

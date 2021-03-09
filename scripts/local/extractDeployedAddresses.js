@@ -1,32 +1,39 @@
 #!/usr/bin/env node
 
-/* This script extracts deployed addresses from build folder and puts them into deployedAddresses.json */
+/* This script extracts deployed addresses from build folder and puts them into deployedAddresses_{network-name}.json */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
+const yargs = require("yargs");
 
-const projectDir = path.join(__dirname, '..', '..');
+// --network avax|eth
+const network = yargs.argv.network;
+if (!network) {
+  network = "eth";
+}
+
+const projectDir = path.join(__dirname, "..", "..");
 const deployerJsonPath = path.join(
   projectDir,
-  'build',
-  'contracts',
-  'DeploymentManager.json'
+  "build",
+  "contracts",
+  "DeploymentManager.json"
 );
 const deployedAddressesJsonPath = path.join(
   projectDir,
-  'deployedAddresses.json'
+  `deployedAddresses_${network}.json`
 );
 
 const { networks } = require(deployerJsonPath);
 
 const deployedAddresses = networks;
 
-Object.keys(deployedAddresses).forEach(key => {
+Object.keys(deployedAddresses).forEach((key) => {
   switch (key) {
-    case '1': // mainnet
-    case '3': // ropsten
-    case '4': // rinkeby
-    case '42': // kovan
+    case "1": // mainnet
+    case "3": // ropsten
+    case "4": // rinkeby
+    case "42": // kovan
       break;
     default:
       delete deployedAddresses[key];

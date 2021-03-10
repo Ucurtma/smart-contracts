@@ -13,6 +13,7 @@
     "deploy:ropsten": "yarn truffle migrate --network ropsten && node ./scripts/local/extractDeployedAddresses.js",
     "deploy:kovan": "yarn truffle migrate --network kovan && node ./scripts/local/extractDeployedAddresses.js",
     "deploy:rinkeby": "yarn truffle migrate --network rinkeby && node ./scripts/local/extractDeployedAddresses.js",
+    "deploy:avalanche_fuji": "yarn truffle migrate --network avalanche_fuji && node ./scripts/local/extractDeployedAddresses.js --network avax",
     "deploy:local": "yarn truffle migrate && node ./scripts/local/updateOtherReposWithDeployerAddress.js",
     "cleanup": "yarn truffle networks --clean",
     "verify": "yarn prepublishOnly && yarn truffle run verify"

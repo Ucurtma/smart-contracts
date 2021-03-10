@@ -13,7 +13,7 @@ const deployedAddresses = require('../deployedAddresses.json');
 const { networks } = require('../truffle-config.js');
 const moment = require('moment');
 
-const { DeploymentManager } = require('../contracts');
+const { DeploymentManager } = require('../main').contracts;
 
 const waitTx = async promise => {
   const txReceipt = await promise;
@@ -43,6 +43,7 @@ const init = async () => {
     .option('--rinkeby', 'Use Rinkeby instead of local development network')
     .option('--kovan', 'Use Kovan instead of local development network')
     .option('--mainnet', 'Use Mainnet instead of local development network')
+    .option('--avalanche_fuji', 'Use Mainnet instead of local development network')
     .requiredOption('-p, --payouts [n]', 'Number of payouts')
     .requiredOption('-w, --withdraw [n]', 'Withdraw payout period in days', 28)
     .requiredOption('-e, --endTime <n>', 'Campaign end time in days', 30)
@@ -58,6 +59,8 @@ const init = async () => {
     ? 'rinkeby'
     : program.kovan
     ? 'kovan'
+    : program.avalanche_fuji
+    ? 'avalanche_fuji'
     : 'development';
 
   const numberOfPayouts = program.payouts;
@@ -92,6 +95,8 @@ const init = async () => {
     provider = networks.kovan.provider();
   } else if (program.mainnet) {
     provider = networks.mainnet.provider();
+  } else if (program.avalanche_fuji) {
+    provider = networks.avalanche_fuji.provider();
   }
   const web3 = new Web3(provider);
 
@@ -126,7 +131,8 @@ const init = async () => {
         toHex(withdrawPeriod),
         toHex(campaignEndTime),
         owner,
-        tokenAddress
+        tokenAddress,
+        web3.currentProvider.addresses[0],
       )
       .send({ from: account, gas: 4000000 })
   );

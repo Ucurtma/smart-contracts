@@ -2,8 +2,10 @@ pragma solidity ^0.5.11;
 
 import "./AbstractFundingContract.sol";
 import "./zeppelin/token/ERC20/IERC20.sol";
+import "./zeppelin/token/ERC20/SafeERC20.sol";
 
 contract ERC20FundingContract is AbstractFundingContract {
+    using SafeERC20 for IERC20;
     IERC20 public token; // Should use a safe transfer proxy?
 
     constructor(
@@ -36,12 +38,12 @@ contract ERC20FundingContract is AbstractFundingContract {
     }
 
     function doWithdraw(address payable owner, uint256 amount) internal {
-        token.transfer(owner, amount);
+        token.safeTransfer(owner, amount);
     }
 
     function doDeposit(address donator, uint256 amount) internal {
         require(msg.value == 0, "No ETH allowed for ERC20 contract.");
-        token.transferFrom(donator, address(this), amount);
+        token.safeTransferFrom(donator, address(this), amount);
     }
 
     function getPayoutAmount(

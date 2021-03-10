@@ -1,10 +1,10 @@
 pragma solidity ^0.5.11;
 
 import "./FundingContract.sol";
-import "./zeppelin/ownership/Ownable.sol";
 import "./zeppelin/ownership/AdminControlled.sol";
 
-contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
+contract AbstractFundingContract is FundingContract, AdminControlled {
+    address payable public owner;
     uint256 public numberOfPlannedPayouts;
     uint256 public amountPerPayment;
     uint256 public withdrawPeriod;
@@ -12,6 +12,8 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
     bool public cancelled;
     uint256 public totalNumberOfPayoutsLeft;
     uint256 public withdrawLimit;
+
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     modifier notCancelled {
         require(!cancelled, "Campaign is cancelled");
@@ -46,6 +48,12 @@ contract AbstractFundingContract is FundingContract, Ownable, AdminControlled {
 
         // consider the last withdraw date is the last day of campaign
         lastWithdraw = _campaignEndTime;
+    }
+
+    function transferOwnership(address payable newOwner) public onlyAdmin {
+        require(newOwner != address(0), 'Need a valid owner');
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
     }
 
     function canWithdraw() public view returns (bool) {

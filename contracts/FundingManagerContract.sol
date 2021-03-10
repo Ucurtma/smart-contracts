@@ -2,10 +2,13 @@ pragma solidity ^0.5.11;
 
 import "./zeppelin/ownership/Ownable.sol";
 import "./zeppelin/token/ERC20/IERC20.sol";
+import "./zeppelin/token/ERC20/SafeErc20.sol";
 import "./DeploymentManager.sol";
 import "./FundingContract.sol";
 
 contract FundingManagerContract is Ownable {
+    using SafeERC20 for IERC20;
+
     event SplitSharedFunds(
         address[] indexed addresses,
         uint256 indexed totalSpent
@@ -103,7 +106,7 @@ contract FundingManagerContract is Ownable {
             if (amountToPay > level.requiredBalance) {
                 amountToPay = level.requiredBalance;
             }
-            token.transfer(fundings[fundingIndex].campaign, amountToPay);
+            token.safeTransfer(fundings[fundingIndex].campaign, amountToPay);
             spentAmount += amountToPay;
         }
         emit SplitSharedFunds(_campaigns, spentAmount);
@@ -120,7 +123,7 @@ contract FundingManagerContract is Ownable {
         IERC20 token = IERC20(_tokenAddress);
         uint256 balance = token.balanceOf(address(this));
         require(balance > 0, "InsufficientBalance");
-        token.transfer(_toAddress, balance);
+        token.safeTransfer(_toAddress, balance);
     }
 
     function destroyAndSend(address _tokenAddress) public onlyOwner {

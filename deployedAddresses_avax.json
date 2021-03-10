@@ -43,54 +43,7 @@
       }
     },
     "links": {},
-    "address": "0xEaAdd2217D30fb5D2A7706E0365c9cB206531071",
-    "transactionHash": "0xfd8eb2875d8579eeca9f489738c5313ecc4b282ffbccb85eeadcf8b5e6003369"
-  },
-  "4": {
-    "events": {
-      "0x5ec743f1d0419091a427f519206ded3ef1711d57bdf2e82e2ad58a38b6165c25": {
-        "anonymous": false,
-        "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "deployedAddress",
-            "type": "address"
-          },
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "deployer",
-            "type": "address"
-          }
-        ],
-        "name": "NewFundingContract",
-        "type": "event",
-        "signature": "0x5ec743f1d0419091a427f519206ded3ef1711d57bdf2e82e2ad58a38b6165c25"
-      },
-      "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-        "anonymous": false,
-        "inputs": [
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "previousOwner",
-            "type": "address"
-          },
-          {
-            "indexed": true,
-            "internalType": "address",
-            "name": "newOwner",
-            "type": "address"
-          }
-        ],
-        "name": "OwnershipTransferred",
-        "type": "event",
-        "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
-      }
-    },
-    "links": {},
-    "address": "0x9CbBcE049B452b9481Db84280e2c1F190DeCbade",
-    "transactionHash": "0x972c426ff9488d9cc250c7564b61574fbc0e61edd8ef6fabb7e1be96b7dd3944"
+    "address": "0x3508B6c20790D032EC200bf8d0A30986FbFf76Eb",
+    "transactionHash": "0xb225e1339c2b893fac335075cfc01eeaaf2c1160437c4c973afc11001993dfa9"
   }
 }

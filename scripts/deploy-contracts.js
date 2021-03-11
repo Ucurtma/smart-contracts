@@ -43,7 +43,7 @@ const init = async () => {
     .option('--rinkeby', 'Use Rinkeby instead of local development network')
     .option('--kovan', 'Use Kovan instead of local development network')
     .option('--mainnet', 'Use Mainnet instead of local development network')
-    .option('--avalanche_fuji', 'Use Mainnet instead of local development network')
+    .option('--avalanche_fuji', 'Use Avalanche Fuji instead of local development network')
     .requiredOption('-p, --payouts [n]', 'Number of payouts')
     .requiredOption('-w, --withdraw [n]', 'Withdraw payout period in days', 28)
     .requiredOption('-e, --endTime <n>', 'Campaign end time in days', 30)

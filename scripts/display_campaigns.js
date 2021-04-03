@@ -27,6 +27,7 @@ const start = async () => {
 
     const campaigns = response.data.data.campaigns.campaigns;
     const biLiraAddr = '0x2c537e5624e4af88a7ae4060c022609376c8d0eb';
+    const output = [];
 
     for (campaign of campaigns) {
         const response = await axios.get(`https://api.etherscan.io/api?module=account&action=tokentx&address=${campaign.ethereumAddress}&page=1&offset=0&sort=desc&apikey=${process.env.ETHERSCAN_API_KEY}`, {
@@ -36,15 +37,16 @@ const start = async () => {
         const campaignContract = new web3.eth.Contract(Erc20FundingContract.abi, campaign.ethereumAddress);
         const totalBalanceInDecimals = await campaignContract.methods.totalBalance(biLiraAddr).call();
 
-        console.log(`
-            ============
-            Ögrenci: ${campaign.student.name}
-            Contract: ${campaign.ethereumAddress}
-            Bakiye: ${normalizeAmount(totalBalanceInDecimals, BILIRA_DECIMALS)} BiLira
-            Son Destek Tarihi: ${moment(mostRecentIncomingTransaction.timeStamp * 1000).format('DD-MM-YYYY')}
-            Son Destek Miktarı: ${normalizeAmount(mostRecentIncomingTransaction.value, BILIRA_DECIMALS)} ${mostRecentIncomingTransaction.tokenName}
-        `);
+        output.push({
+            'Öğrenci': campaign.student.name,
+            'Contract': campaign.ethereumAddress,
+            'Bakiye': `${normalizeAmount(totalBalanceInDecimals, BILIRA_DECIMALS)} BiLira`,
+            'Son Destek Tarihi': moment(mostRecentIncomingTransaction.timeStamp * 1000).format('DD-MM-YYYY'),
+            'Son Destek Miktarı': `${normalizeAmount(mostRecentIncomingTransaction.value, BILIRA_DECIMALS)} ${mostRecentIncomingTransaction.tokenName}`,
+        });
     }
+
+    console.table(output);
 }
 
 const normalizeAmount = (amount, decimals) => {

@@ -1,0 +1,13 @@
+{
+    "localhost": {
+        "FundingContractDeployer": "0x322813Fd9A801c5507c9de605d63CEA4f2CE6c44",
+        "DeploymentManager": "0xa85233C63b9Ee964Add6F2cffe00Fd84eb32338f",
+        "UcurtmaTestToken": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"
+    },
+    "fuji": {
+        "FundingContractDeployer": "0x6c98f62e7e3b7AAE6D13c94CDFfa4428A5FB846e",
+        "DeploymentManager": "0x6ef045fc864Bab8b734a650Ee5A486806541bD08",
+        "UcurtmaTestToken": "0x61C806e43cDf8ad45d2FfeFDc92977ddc7f0f69B"
+    },
+    "mainnet": {}
+}

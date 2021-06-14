@@ -2,8 +2,12 @@ pragma solidity >=0.6.0 <0.8.0;
 
 import "./FundingContract.sol";
 import "./openzeppelin/AdminControlled.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 
 contract AbstractFundingContract is FundingContract, AdminControlled {
+    using SafeERC20 for IERC20;
+
     address payable public override owner;
     uint256 public numberOfPlannedPayouts;
     uint256 public amountPerPayment;
@@ -49,6 +53,8 @@ contract AbstractFundingContract is FundingContract, AdminControlled {
         // consider the last withdraw date is the last day of campaign
         lastWithdraw = _campaignEndTime;
     }
+
+    receive() external payable {}
 
     function transferOwnership(address payable newOwner) public onlyAdmin {
         require(newOwner != address(0), 'Need a valid owner');
@@ -100,6 +106,17 @@ contract AbstractFundingContract is FundingContract, AdminControlled {
     function deposit(address donator, uint256 amount) external override notCancelled {
         doDeposit(donator, amount);
         emit NewDeposit(donator, amount);
+    }
+
+    function sendTokens(address _tokenAddress, address _toAddress) external onlyAdmin {
+        IERC20 token = IERC20(_tokenAddress);
+        uint256 balance = token.balanceOf(address(this));
+        require(balance > 0, "InsufficientBalance");
+        token.safeTransfer(_toAddress, balance);
+    }
+    
+    function sendAvax(address payable _addr) external onlyAdmin {
+        _addr.transfer(address(this).balance);
     }
 
     function totalBalance(

@@ -9,5 +9,8 @@
         "DeploymentManager": "0x6ef045fc864Bab8b734a650Ee5A486806541bD08",
         "UcurtmaTestToken": "0x61C806e43cDf8ad45d2FfeFDc92977ddc7f0f69B"
     },
-    "mainnet": {}
+    "mainnet": {
+        "FundingContractDeployer": "0xf1C745673bC32E20c065Dc3c0987cAAa5B38e2cf",
+        "DeploymentManager": "0x955E5F56fae77Db5829FAE980ADeAc688fE80259"
+    }
 }

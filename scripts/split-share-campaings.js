@@ -1,8 +1,9 @@
 const hre = require('hardhat');
-const { getDeployedAddr } = require('./utils');
+const { getDeployedAddr, ask } = require('./utils');
 
 const main = async () => {
     const DeploymentManager = await hre.ethers.getContractFactory('DeploymentManager');
+    const ERC20FundingContract = await hre.ethers.getContractFactory('ERC20FundingContract');
     const deploymentManager = await DeploymentManager.attach(getDeployedAddr(hre.network.name, 'DeploymentManager'));
     const biliraTokenAddr = '0x564A341Df6C126f90cf3ECB92120FD7190ACb401';
 
@@ -31,6 +32,7 @@ const main = async () => {
         // "0x1Edc0c6d2Dc234332E568f58604C431B015feb98", // MUSTAFA EREN
     ];
 
+    console.log('Calculating the payments...');
     let [addresses, amounts] = await deploymentManager.functions.calculateShareAmounts(
         '500000000', // 500 TL
         addrs,
@@ -40,6 +42,22 @@ const main = async () => {
     addresses = addresses.filter((addr) => addr !== '0x0000000000000000000000000000000000000000');
     amounts = amounts.map((amount) => amount.toString()).filter((amount) => amount !== '0');
 
+    if (addresses.length === 0) {
+        return console.log('Nothing to pay. Exiting.');
+    }
+
+    for (let i = 0; i < addresses.length; i++) {
+        const campaign = await ERC20FundingContract.attach(addresses[i]);
+        const total = parseFloat(await campaign.functions.totalBalance(addresses[i]));
+        const amount = parseFloat(amounts[i]);
+        console.log(`\t${addresses[i]} will get ${amount / 1000000}. New total amount will be ${(total + amount) / 1000000}`);
+    }
+
+    const response = await ask(`Are you sure you want to continue with the ${addresses.length} payments? (Y/N): \n`);
+    if (response !== "Y") {
+        return console.log('Cancelled');
+    }
+    console.log('We are ready to send the payments...');
     const tx = await deploymentManager.functions.makePayments(
         addresses,
         amounts,
@@ -48,7 +66,6 @@ const main = async () => {
     const receipt = await tx.wait();
 
     console.log(receipt);
-    console.log(addresses, amounts, addresses.length, amounts.length);
 };
 
 main()

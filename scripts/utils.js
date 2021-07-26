@@ -17,3 +17,16 @@ module.exports.getDeployedAddr = (network, contract) => {
     const deployments = readDeploymentsFile();
     return deployments[network][contract];
 }
+
+module.exports.ask = async (question) => {
+    const stdin = process.stdin, stdout = process.stdout;
+
+    stdin.resume();
+    stdout.write(question);
+
+    return new Promise(res => {
+        stdin.once('data', function (data) {
+            res(data.toString().trim());
+        });
+    });
+}

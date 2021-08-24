@@ -44,17 +44,20 @@ const main = async () => {
         const whenToWithdraw = (epochTimeToWithdraw - Math.floor(Date.now() / 1000)) / 60 / 60;
         const hoursToWithdraw = Math.floor(whenToWithdraw);
         const minutesToWithdraw = Math.floor((whenToWithdraw - hoursToWithdraw) * 60);
-        console.log(`Total Balance: \t\t${totalBalance.toString()}`);
+        console.log(`Total Balance: \t\t${parseInt(totalBalance.toString()) / 10 ** 6} TRYb`);
         console.log(`Can withdraw: \t\t${canWithdraw.toString()}`);
         console.log(`Total Left: \t\t${totalLeft.toString()}`);
         console.log(`When to run: \t\t${hoursToWithdraw} hours and ${minutesToWithdraw} minutes later.`);
-        
-        if (canWithdraw) {
+
+        if (canWithdraw && parseInt(totalBalance.toString()) > 0) {
             console.log(`Withdraw triggering for '${currentAddress}'`);
             const tx = await fundingContract.functions.withdraw();
             const receipt = await tx.wait();
+            console.log(`${currentAddress}:`);
+            if (receipt.transactionHash) {
+                console.log(`\t Transaction hash: \t\t${receipt.transactionHash}`);
+            }
 
-            console.log(`${currentAddress}: \t ${receipt}\n`);
         }
         console.log(`--------------------------- \n`);
     }

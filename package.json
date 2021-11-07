@@ -3,12 +3,6 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
-    "repository": "https://github.com/ava-labs/avalanche-smart-contract-quickstart",
-    "author": "Connor Daly <connor.daly@avalabs.org>",
-    "contributors": [
-        "Gabriel Cardona <gabriel@avalabs.org>"
-    ],
-    "license": "BSD-3-Clause",
     "scripts": {
         "precompile": "rimraf ./build/",
         "compile": "npx hardhat compile",

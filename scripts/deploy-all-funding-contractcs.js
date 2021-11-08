@@ -15,9 +15,12 @@ const toTimestamp = inputDays => {
 const main = async () => {
     const DeploymentManager = await hre.ethers.getContractFactory('DeploymentManager');
     const deploymentManager = await DeploymentManager.attach(getDeployedAddr(hre.network.name, 'DeploymentManager'));
-    const amountPerPayment = '1000000000';
+    const amountPerPayment = '500000000';
     const biliraTokenAddr = '0x564A341Df6C126f90cf3ECB92120FD7190ACb401';
     const students = [
+        // { name: "Billur", addr: "Pekbaş	" },
+        // { name: "Kaan", addr: "Demirkoparan	" },
+        { name: "Nil Gülmez", addr: "0x49fcC7f56140Ce2595393aE42238504ab66A49eb" },
         { name: "Rabia Alay", addr: "0x0E8cD84972b09d26B824F11784ec07adf17f85E8" },
         { name: "Birgül Sümer", addr: "0x72F8cC25b050E23152390CdAEe36A8848bCD56b0" },
         { name: "Ece Harbelioğlu", addr: "0x33d12CbF3dca9e261B9a501652bdDB6015AC8e30" },
@@ -28,9 +31,12 @@ const main = async () => {
         { name: "Halime BABÜR", addr: "0x198F4Eb33a856C2C3e26a0455266171a1A2A1724" },
         { name: "Tuğba Yıldırım", addr: "0x41af80969c24614F8Bd86C6ED0Fc90b333BbB6C8" },
         { name: "Mehmet Ali Aydın", addr: "0xf1947e4bDa190D41d25069B123EE56366040fc0f" },
-        { name: "Rozelin Aslan", addr: "0x8C2b7DAFEd1b20f7aD0A7F0a679521438da8C724" },
         { name: "Şeyda Tarım", addr: "0x58DC5f41E9176790C9b48A8A353Ec11bA45b274f" },
         { name: "Hayrullah Can Özkan", addr: "0x08621e25a19E48E91df418428Bf6CECD6A707f09" },
+        { name: "EMİNE NUR ATAKOL", addr: "0x21790F1b4dF19185a8d43476089eA27117B48923" },
+        { name: "Murat ayten", addr: "0xA427ce735245e779E2E314b14BD3D7800D9a01E0" },
+        { name: "Muhammet Rezan İçgil", addr: "0xb438Fee65524C7c5cd3B86CcC10cbD6E8e4049c0" },
+        { name: "Eren Yılmaz", addr: "0x65825cDA0FE9c00b0b5A5C0c04f875c5518AAA57" },
         { name: "Barış Timur", addr: "0x54811F2B9B89CeE4eB1632e88B359E0CA26F443F" },
         { name: "Recep Aksona", addr: "0x1B70Afd01deA9446A4Fb5B19624C41A1D06Cca9b" },
         { name: "yasemin akşeker", addr: "0x7CA1A826eB94CeD6DB04e37b6150f63F5Aa8e3e2" },

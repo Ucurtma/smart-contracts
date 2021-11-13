@@ -19,7 +19,7 @@ const main = async () => {
     const biliraTokenAddr = '0x564A341Df6C126f90cf3ECB92120FD7190ACb401';
     const students = [
         // { name: "Billur", addr: "Pekbaş	" },
-        // { name: "Kaan", addr: "Demirkoparan	" },
+        { name: "Kaan Demirkoparan", addr: "0x55c23072e46b9d8b79C597513166b65B339fE21D" },
         { name: "Nil Gülmez", addr: "0x49fcC7f56140Ce2595393aE42238504ab66A49eb" },
         { name: "Rabia Alay", addr: "0x0E8cD84972b09d26B824F11784ec07adf17f85E8" },
         { name: "Birgül Sümer", addr: "0x72F8cC25b050E23152390CdAEe36A8848bCD56b0" },

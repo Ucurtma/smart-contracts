@@ -1,5 +1,9 @@
 const contracts = [
   {
+    cchain_address: '0x72F8cC25b050E23152390CdAEe36A8848bCD56b0',
+    campaign_address: '0x743B89e6d23fD11a2b96fdb52C2a9b4dc2959071',
+  },
+  {
     cchain_address: '0x55c23072e46b9d8b79C597513166b65B339fE21D',
     campaign_address: '0x02F12A1b912Edf1f2E83eBC2133081B08eea318C',
   },

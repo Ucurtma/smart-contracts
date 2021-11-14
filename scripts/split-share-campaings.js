@@ -8,6 +8,7 @@ const main = async () => {
     const biliraTokenAddr = '0x564A341Df6C126f90cf3ECB92120FD7190ACb401';
 
     let addrs = [
+        "0x743B89e6d23fD11a2b96fdb52C2a9b4dc2959071",
         "0x02F12A1b912Edf1f2E83eBC2133081B08eea318C",
         "0x8d84508cb9d805a0c1805B76CAfD9B69645a0E4C",
         "0xFf29ff0b66854AC45ca31188b87bA878E191FD92",

@@ -1,8 +1,13 @@
 const contracts = [
   {
+    cchain_address: '0x55c23072e46b9d8b79C597513166b65B339fE21D',
+    campaign_address: '0x02F12A1b912Edf1f2E83eBC2133081B08eea318C',
+  },
+  {
     cchain_address: '0x49fcC7f56140Ce2595393aE42238504ab66A49eb',
     campaign_address: '0x8d84508cb9d805a0c1805B76CAfD9B69645a0E4C',
   },
+  ,
   {
     cchain_address: '0x0E8cD84972b09d26B824F11784ec07adf17f85E8',
     campaign_address: '0xFf29ff0b66854AC45ca31188b87bA878E191FD92',

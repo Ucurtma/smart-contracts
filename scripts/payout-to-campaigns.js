@@ -6,6 +6,9 @@ const main = async () => {
 
 
     let addrs = [
+        // suspend the below contract, we'll change the address soon.
+        // "0xaD8e4Bfa1817C6D772AEba769D671Af3d445E0d0",
+        // "0x5215a9DE0657ce2f7FfF20B36e481C4EA7c17792",
         "0x743B89e6d23fD11a2b96fdb52C2a9b4dc2959071",
         "0x02F12A1b912Edf1f2E83eBC2133081B08eea318C",
         "0x8d84508cb9d805a0c1805B76CAfD9B69645a0E4C",
@@ -57,6 +60,7 @@ const main = async () => {
             if (canWithdraw && parseInt(totalBalance.toString()) > 0) {
                 console.log(`Withdraw triggering for '${currentAddress}'`);
                 const tx = await fundingContract.functions.withdraw();
+                console.log(tx);
                 const receipt = await tx.wait();
                 console.log(`${currentAddress}:`);
                 if (receipt.transactionHash) {

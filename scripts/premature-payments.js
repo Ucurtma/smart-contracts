@@ -88,11 +88,11 @@ const contracts = [
   //   campaign_address: '0x5E922A6Ab4dD04d1f9ca7eF9Af69F4938356F252',
   // },
   // // Ridvan
-  {
-    cchain_address: '0x6b9cEcF7794657163Da56579aD2ff35B05793304',
-    campaign_address: '0x8D5C66FBDD689ddB3D7F705385C908ab6d358361',
-    amount: 500000000,
-  },
+  // {
+  //   cchain_address: '0x6b9cEcF7794657163Da56579aD2ff35B05793304',
+  //   campaign_address: '0x8D5C66FBDD689ddB3D7F705385C908ab6d358361',
+  //   amount: 500000000,
+  // },
   // //emine nur
   // {
   //   cchain_address: '0x21790F1b4dF19185a8d43476089eA27117B48923',

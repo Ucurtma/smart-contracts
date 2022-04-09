@@ -9,8 +9,10 @@ const main = async () => {
         // suspend the below contract, we'll change the address soon.
         // "0xaD8e4Bfa1817C6D772AEba769D671Af3d445E0d0",
         // "0x5215a9DE0657ce2f7FfF20B36e481C4EA7c17792",
-        "0x743B89e6d23fD11a2b96fdb52C2a9b4dc2959071",
-        "0x02F12A1b912Edf1f2E83eBC2133081B08eea318C",
+
+        // reset back asap
+        // "0x743B89e6d23fD11a2b96fdb52C2a9b4dc2959071",
+        // "0x02F12A1b912Edf1f2E83eBC2133081B08eea318C",
         "0x8d84508cb9d805a0c1805B76CAfD9B69645a0E4C",
         "0xFf29ff0b66854AC45ca31188b87bA878E191FD92",
         "0x0b89baA70A32377E37446a0DF0A8978EB8C55363",
@@ -34,6 +36,17 @@ const main = async () => {
         "0x49001C88191769bA7Caf0473Cd6A778f2534a0C5",
         "0x5E922A6Ab4dD04d1f9ca7eF9Af69F4938356F252",
         "0x413290e262Fc1227A822d352ee5dE64C81DDBDeC",
+        "0x94861cEEFAAe0e7232E2274CE7B9199a8Afc055c",
+        "0x33504d46CcEfC6D3f1f4ADc3D882fF3a5dbF93d4",
+        "0x413FFA4c43ce4e617a77B394BB4f551Cd2530e1F",
+        "0xB6DB60D6Aa2fa3974A5702D026B9c097c9A56a12",
+        "0xd622860F488fD8A6F185a5B64dAEA3316e5717a9",
+        "0x82bc06cD64fFe21811004e5ce8a4Fe2b64E0B2C7",
+        "0x60587b4f8E95245064484cfd1f4f25b3963F1E4B",
+        "0xCfC5b2301390AF6B45bAa9a4c7DD2D16A64e3260",
+        "0x2eed54f8d3F9C94e6f597a583c53a2B26217eA00",
+        "0xB5B16eEa21b7aB403E156FA65EA8A076387Ef598",
+        "0x2f556229461D7857940FB33046BEd989282BBB38",
     ];
 
     for (let x = 0; x < addrs.length; x++) {
@@ -59,7 +72,7 @@ const main = async () => {
 
             if (canWithdraw && parseInt(totalBalance.toString()) > 0) {
                 console.log(`Withdraw triggering for '${currentAddress}'`);
-                const tx = await fundingContract.functions.withdraw();
+                const tx = await fundingContract.functions.withdraw({ gasLimit: 80000 });
                 console.log(tx);
                 const receipt = await tx.wait();
                 console.log(`${currentAddress}:`);

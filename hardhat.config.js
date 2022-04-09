@@ -79,7 +79,13 @@ module.exports = {
         },
         mainnet: {
             url: 'https://api.avax.network/ext/bc/C/rpc',
-            gasPrice: 99000000000, //25 nAVAX
+            gasPrice: 47000000000, //25 nAVAX
+            chainId: 43114,
+            accounts: process.env.MAINNET_PRIVATE_KEY ? [process.env.MAINNET_PRIVATE_KEY] : []
+        },
+        remote: {
+            url: 'http://80.240.24.215:9650/ext/bc/C/rpc',
+            gasPrice: 25000000000, //25 nAVAX
             chainId: 43114,
             accounts: process.env.MAINNET_PRIVATE_KEY ? [process.env.MAINNET_PRIVATE_KEY] : []
         }

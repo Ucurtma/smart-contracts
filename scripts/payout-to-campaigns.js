@@ -47,6 +47,8 @@ const main = async () => {
         "0x2eed54f8d3F9C94e6f597a583c53a2B26217eA00",
         "0xB5B16eEa21b7aB403E156FA65EA8A076387Ef598",
         "0x2f556229461D7857940FB33046BEd989282BBB38",
+        "0x06C73d006cd4f7C97FD50e594506c1947C301262",
+        "0x50a40D2Da2a4CA670Add4c0c9E2A38F117B3d0CF",
     ];
 
     for (let x = 0; x < addrs.length; x++) {

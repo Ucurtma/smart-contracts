@@ -12,7 +12,7 @@ const main = async () => {
 
         // reset back asap
         // "0x743B89e6d23fD11a2b96fdb52C2a9b4dc2959071",
-        // "0x02F12A1b912Edf1f2E83eBC2133081B08eea318C",
+        "0x02F12A1b912Edf1f2E83eBC2133081B08eea318C",
         "0x8d84508cb9d805a0c1805B76CAfD9B69645a0E4C",
         "0xFf29ff0b66854AC45ca31188b87bA878E191FD92",
         "0x0b89baA70A32377E37446a0DF0A8978EB8C55363",
@@ -74,7 +74,7 @@ const main = async () => {
 
             if (canWithdraw && parseInt(totalBalance.toString()) > 0) {
                 console.log(`Withdraw triggering for '${currentAddress}'`);
-                const tx = await fundingContract.functions.withdraw({ gasLimit: 80000 });
+                const tx = await fundingContract.functions.withdraw({ gasLimit: 100000 });
                 console.log(tx);
                 const receipt = await tx.wait();
                 console.log(`${currentAddress}:`);

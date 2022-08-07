@@ -26,6 +26,7 @@ const main = async () => {
         "0x2f556229461D7857940FB33046BEd989282BBB38",
         "0x06C73d006cd4f7C97FD50e594506c1947C301262",
         "0x50a40D2Da2a4CA670Add4c0c9E2A38F117B3d0CF",
+        "0x6BD4D82BfCAee5319f438efb383c01B55E0aA558",
     ];
 
     for (let x = 0; x < addrs.length; x++) {

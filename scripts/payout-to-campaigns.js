@@ -6,9 +6,6 @@ const main = async () => {
 
 
     let addrs = [
-        "0x67A413b7EA4Fd3FB14901624fcD19C70E6ed39c7",
-        "0x06C73d006cd4f7C97FD50e594506c1947C301262",
-        "0x50a40D2Da2a4CA670Add4c0c9E2A38F117B3d0CF",
         "0x6BD4D82BfCAee5319f438efb383c01B55E0aA558",
     ];
 
